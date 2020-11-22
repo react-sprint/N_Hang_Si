@@ -1,0 +1,50 @@
+// ****************
+// Color
+// ****************
+
+$white: #ffffff;
+$black: #222222;
+$white-gray: #f7f7f7;
+$gray: #717171;
+
+// ****************
+// Font Size
+// ****************
+$font-size-base: 1rem; // 16px
+$font-size-1: $font-size-base * 1.25; // 20px
+$font-size-2: $font-size-base * 1.125; // 18px
+$font-size-3: $font-size-base * 1; // 16px
+$font-size-4: $font-size-base * 0.875; // 14px
+
+$h1-font-size: $font-size-base * 2;
+$h2-font-size: $font-size-base * 1.625;
+$h3-font-size: $font-size-base * 1.375;
+$h4-font-size: $font-size-base * 1.125;
+$h5-font-size: $font-size-base * 1;
+
+// ****************
+// Font Weight
+// ****************
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+// ****************
+// Font Stack
+// ****************
+$font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+// ****************
+// Display width
+// ****************
+
+$mobile-portrait: 320px;
+$mobile-landscape: 568px;
+$tablet-portrait: 768px;
+$tablet-landscape: 1024px;
+$desktop: 1440px;

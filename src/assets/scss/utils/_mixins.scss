@@ -1,0 +1,57 @@
+@import 'utils/variables.scss';
+
+// ****************
+// Media Query
+// ****************
+
+$breakpoints: (
+  // max
+  'max_xs':
+    (
+      max-width: $mobile-portrai,
+    ),
+  'max_s': (
+    max-width: $mobile-landscape,
+  ),
+  'max_m': (
+    max-width: $tablet-portrait,
+  ),
+  'max_l': (
+    max-width: $tablet-landscape,
+  ),
+  'max_lg': (
+    max-width: $desktop,
+  ),
+  // min
+  'min_xs':
+    (
+      min-width: $mobile-portrai,
+    ),
+  'min_s': (
+    min-width: $mobile-landscape,
+  ),
+  'min_m': (
+    min-width: $tablet-portrait,
+  ),
+  'min_l': (
+    min-width: $tablet-landscape,
+  ),
+  'min_lg': (
+    min-width: $desktop,
+  )
+) !default;
+
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
