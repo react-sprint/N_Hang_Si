@@ -16,9 +16,11 @@
     opacity: 0;
   }
   &.active > &__line:nth-child(1) {
+    background-color: $color-white;
     transform: translateY(13px) rotate(45deg);
   }
   &.active > &__line:nth-child(3) {
+    background-color: $color-white;
     transform: translateY(-13px) rotate(-45deg);
   }
   &:hover {
