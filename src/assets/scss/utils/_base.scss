@@ -43,7 +43,7 @@ button {
   background-color: initial;
   background-repeat: initial;
   background-image: none;
-  background-color: $white;
+  background-color: $color-white;
   background-repeat: no-repeat;
 
   font-weight: $font-weight-normal;
@@ -105,9 +105,9 @@ input[type='text'] {
 
   border-width: 1px;
   border-style: solid;
-  border-color: $white;
+  border-color: $color-white;
 
-  background: $white;
+  background: $color-white;
   text-decoration: none;
   resize: none;
   line-height: 1.2;

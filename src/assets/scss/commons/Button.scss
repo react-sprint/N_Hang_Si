@@ -8,10 +8,10 @@
     border-radius: 0.8rem;
   }
   &.orange {
-    background-color: $orange;
-    color: $white;
+    background-color: $color-orange-1;
+    color: $color-black;
     &:hover {
-      background-color: $dark-orange;
+      background-color: $color-orange-2;
     }
   }
   &.white {
@@ -19,16 +19,16 @@
     border-style: solid;
     border-width: 1px;
     &:hover {
-      border-color: $orange;
-      color: $orange;
+      border-color: $color-orange-1;
+      color: $color-orange-1;
     }
   }
   &.black {
-    background-color: $black-gray;
-    color: $light-gray2;
+    background-color: $color-gray-0;
+    color: $color-gray-5;
     &:hover {
-      background-color: $gray;
-      color: $dark-orange;
+      background-color: $color-gray-1;
+      color: $color-orange-2;
     }
   }
 }

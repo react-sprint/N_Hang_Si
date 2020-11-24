@@ -3,29 +3,29 @@
 // ****************
 
 // theme
-$black: #000000;
-$black-gray: #444444;
-$white: #ffffff;
-$white-gray: #dddddd;
+$color-black: #000000;
+$color-white: #ffffff;
 
-$gray: #666666;
-$dark-gray1: #676767;
-$dark-gray2: #9c9c9c;
-$light-gray1: #c8c8c8;
-$light-gray2: #cacaca;
+$color-gray-0: #444444;
+$color-gray-1: #666666;
+$color-gray-2: #676767;
+$color-gray-3: #9c9c9c;
+$color-gray-4: #c8c8c8;
+$color-gray-5: #cacaca;
+$color-gray-6: #dddddd;
 
-$orange: #f58220;
-$dark-orange: #f4933f;
-$light-orange: #ffcb9e;
+$color-orange-1: #f58220;
+$color-orange-2: #f4933f;
+$color-orange-3: #ffcb9e;
 
 // from default
-$default-border: $white-gray;
-$default-text: $dark-gray1;
+$default-border: $color-gray-6;
+$default-text: $color-gray-2;
 
 // boxes
-$numberBox-dim-gray: $dark-gray2;
-$rankBox-dim-gray: $light-gray1;
-$rankBox-dim-orange: $light-orange;
+$numberBox-dim-gray: $color-gray-3;
+$rankBox-dim-gray: $color-gray-4;
+$rankBox-dim-orange: $color-orange-3;
 
 //background
 $wrapper-background: #fafafa;
