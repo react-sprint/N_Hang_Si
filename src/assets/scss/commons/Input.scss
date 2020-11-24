@@ -1,0 +1,7 @@
+@import 'utils/variables.scss';
+
+.input {
+  &:focus {
+    border-color: $orange;
+  }
+}
