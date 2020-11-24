@@ -1,0 +1,7 @@
+@import 'utils/variables.scss';
+
+.textarea {
+  &:hover {
+    border-color: $color-orange-1;
+  }
+}

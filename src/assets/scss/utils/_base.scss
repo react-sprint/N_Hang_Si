@@ -105,10 +105,11 @@ input[type='text'] {
 
   border-width: 1px;
   border-style: solid;
-  border-color: $color-white;
+  border-color: $color-gray-4;
 
   background: $color-white;
   text-decoration: none;
   resize: none;
   line-height: 1.2;
+  outline: none;
 }
