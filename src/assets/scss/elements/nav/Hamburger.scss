@@ -1,0 +1,28 @@
+@import 'utils/mixins.scss';
+@import 'utils/variables.scss';
+
+.hamburger {
+  @include space-clear;
+  transition: opacity 0.3s;
+  &__line {
+    width: 5rem;
+    height: 0.5rem;
+    background-color: $color-orange-1;
+    margin: 8px auto;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+  }
+  &.active > &__line:nth-child(2) {
+    opacity: 0;
+  }
+  &.active > &__line:nth-child(1) {
+    transform: translateY(13px) rotate(45deg);
+  }
+  &.active > &__line:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+  }
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+}
