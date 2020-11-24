@@ -1,7 +1,8 @@
 @import 'utils/variables.scss';
+@import 'utils/mixins.scss';
 
-* {
-  font-family: $font-stack;
+html {
+  font-size: 62.5%;
 }
 h1,
 h2 {
@@ -22,4 +23,92 @@ h3 {
 }
 h4 {
   font-size: $h4-font-size;
+}
+
+button {
+  @include space-clear;
+  cursor: pointer;
+  padding: 8px 0;
+
+  display: inline-block;
+  min-width: 6.5rem;
+  width: 100%;
+  height: 4rem;
+
+  color: $default-text;
+
+  border-color: $default-border;
+
+  background-image: initial;
+  background-color: initial;
+  background-repeat: initial;
+  background-image: none;
+  background-color: $color-white;
+  background-repeat: no-repeat;
+
+  font-weight: $font-weight-normal;
+  font-size: $font-size-3;
+  font-family: $font-stack-ko;
+
+  text-align: center;
+  text-indent: 0;
+  text-decoration: none;
+  outline: none;
+}
+
+input[type='text'] {
+  @include space-clear;
+  padding: 0.8rem;
+
+  line-height: normal;
+  width: 100%;
+  height: 4rem;
+
+  color: $default-text;
+
+  border-top-width: initial;
+  border-bottom-width: initial;
+  border-right-width: initial;
+  border-left-width: initial;
+  border-top-color: initial;
+  border-bottom-color: initial;
+  border-right-color: initial;
+  border-left-color: initial;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: $default-border;
+  border-radius: 0.8rem;
+
+  font-family: $font-stack-ko;
+  font-size: $font-size-4;
+  font-weight: $font-weight-bold;
+
+  border-image: initial;
+  border-image: none;
+  background-color: transparent;
+
+  text-decoration: none;
+  outline: none;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1.2rem;
+
+  font-weight: $font-weight-normal;
+  font-size: $font-size-4;
+  font-family: $font-stack-ko;
+
+  color: $default-text;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: $color-white;
+
+  background: $color-white;
+  text-decoration: none;
+  resize: none;
+  line-height: 1.2;
 }

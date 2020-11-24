@@ -6,37 +6,37 @@
 
 $breakpoints: (
   // max
-  'max_xs':
+  'max-xs':
     (
-      max-width: $mobile-portrai,
+      max-width: $mobile-portrait,
     ),
-  'max_s': (
+  'max-s': (
     max-width: $mobile-landscape,
   ),
-  'max_m': (
+  'max-m': (
     max-width: $tablet-portrait,
   ),
-  'max_l': (
+  'max-l': (
     max-width: $tablet-landscape,
   ),
-  'max_lg': (
+  'max-lg': (
     max-width: $desktop,
   ),
   // min
-  'min_xs':
+  'min-xs':
     (
-      min-width: $mobile-portrai,
+      min-width: $mobile-portrait,
     ),
-  'min_s': (
+  'min-s': (
     min-width: $mobile-landscape,
   ),
-  'min_m': (
+  'min-m': (
     min-width: $tablet-portrait,
   ),
-  'min_l': (
+  'min-l': (
     min-width: $tablet-landscape,
   ),
-  'min_lg': (
+  'min-lg': (
     min-width: $desktop,
   )
 ) !default;
@@ -54,4 +54,28 @@ $breakpoints: (
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
+}
+
+// ****************
+// SpaceType
+// ****************
+
+@mixin space-clear {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+// ****************
+// FormType
+// ****************
+
+@mixin button-style {
+  min-width: 6.5rem;
+  width: 100%;
+  height: 4rem;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-3;
+  font-family: $font-stack-ko;
 }
