@@ -8,6 +8,7 @@ Button
   shape
     default
     round
+    square
   color
     orange
     white
@@ -18,11 +19,9 @@ Button
 const Button = ({ contents, shape, color }) => {
   // 토글 추가 예정
   return (
-    <div className="buttonWrap">
-      <button type="button" className={classNames('button', shape, color)}>
-        {contents}
-      </button>
-    </div>
+    <button type="button" className={classNames('button', shape, color)}>
+      {contents}
+    </button>
   );
 };
 
