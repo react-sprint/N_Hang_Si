@@ -6,27 +6,25 @@ import '@/assets/scss/commons/Input.scss';
 
 /* 
 Input
-  value
+  data
   placeholder
 */
 
-const Input = ({ value, placeholder }) => {
-  const { data, onChange } = useInput(value);
+const Input = ({ data, placeholder }) => {
+  const { value, onChange } = useInput(data);
   return (
-    <div className="inputWrap">
-      <input
-        value={data}
-        type="text"
-        className="input"
-        placeholder={placeholder}
-        onChange={onChange}
-      />
-    </div>
+    <input
+      value={value}
+      type="text"
+      className="input"
+      placeholder={placeholder}
+      onChange={onChange}
+    />
   );
 };
 
 Input.defaultProps = {
-  value: '',
+  data: '',
   placeholder: '입력해주세요',
 };
 
