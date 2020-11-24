@@ -43,6 +43,20 @@ yarn storybook
 
 ## Issue
 
+### .env에서 OS 때문에 생기는 이슈(20.11.24)
+
+각 OS에 맞는 .env 설정이 필요함
+
+```.env
+// .env
+
+// Window 설정
+SASS_PATH=node_modules:./node_modules;./src/assets/scss
+
+// Mac 설정
+SASS_PATH=node_modules:src/assets/scss
+```
+
 ### node-sass 버전때문에 생기는 이슈(20.11.18)
 
 node-sass버전 확인 필요
