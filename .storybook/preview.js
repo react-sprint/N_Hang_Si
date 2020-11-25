@@ -1,5 +1,5 @@
 import React from 'react';
-import '../src/assets/scss/project.scss';
-import '../src/assets/scss/storybook.scss';
+import '../src/assets/project.scss';
+import '../src/assets/storybook.scss';
 
 export const globalTypes = () => {};

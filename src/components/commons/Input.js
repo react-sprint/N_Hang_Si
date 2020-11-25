@@ -2,7 +2,7 @@ import React from 'react';
 
 import useInput from '@/utils/hooks/useInput';
 
-import '@/assets/scss/commons/Input.scss';
+import '@/assets/commons/Input.scss';
 
 /* 
 Input
