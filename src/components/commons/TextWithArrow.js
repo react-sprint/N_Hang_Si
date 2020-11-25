@@ -1,7 +1,7 @@
 import React from 'react';
 import ArrowSvg from '@/assets/images/svg/ArrowSvg';
 
-import '@/assets/commons/TextWithArrow.scss';
+import '@/assets/scss/commons/TextWithArrow.scss';
 
 const TextWithArrow = ({ text }) => {
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import useToggle from '@/utils/hooks/useToggle';
 
-import '@/assets/commons/Button.scss';
+import '@/assets/scss/commons/Button.scss';
 
 /* 
 Button

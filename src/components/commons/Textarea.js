@@ -1,5 +1,5 @@
 import React from 'react';
-import '@/assets/commons/Textarea.scss';
+import '@/assets/scss/commons/Textarea.scss';
 import useInput from '@/utils/hooks/useInput';
 
 const Textarea = ({ text, placeholder }) => {
