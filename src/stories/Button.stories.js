@@ -6,31 +6,59 @@ export default {
   component: Button,
 };
 
-export const Default = () => <Button />;
-export const DefaultWhite = () => <Button color="white" />;
-export const DefaultOrange = () => <Button color="orange" />;
-export const DefaultBlack = () => <Button color="black" />;
-
-export const RoundDefault = () => <Button shape="round" />;
-export const RoundWhite = () => <Button shape="round" color="white" />;
-export const RoundOrange = () => <Button shape="round" color="orange" />;
-export const RoundBlack = () => <Button shape="round" color="black" />;
-
-export const SquareDefault = () => <Button shape="square" />;
-export const SquareWhite = () => <Button shape="square" color="white" />;
-export const SquareOrange = () => <Button shape="square" color="orange" />;
-export const SquareBlack = () => <Button shape="square" color="black" />;
-
-export const DefaultTwoButton = () => (
-  <div className="flex-center-center">
-    <Button />
-    <Button />
+export const DefultButton = () => (
+  <div className="flex-colomn">
+    <h2>Button</h2>
+    <div className="flex-row-center">
+      <Button contents="Default" />
+      <Button contents="White" color="white" />
+      <Button contents="Orange" color="orange" />
+      <Button contents="Black" color="black" />
+    </div>
+    <h2>Toggle</h2>
+    <div className="flex-row-center">
+      <Button contents="Default" type="toggle" />
+      <Button contents="White" type="toggle" color="white" />
+      <Button contents="Orange" type="toggle" color="orange" />
+      <Button contents="Black" type="toggle" color="black" />
+    </div>
   </div>
 );
-export const DefaultThreeButton = () => (
-  <div className="flex-center-center">
-    <Button />
-    <Button />
-    <Button />
+
+export const RoundButton = () => (
+  <div className="flex-colomn">
+    <h2>Button</h2>
+    <div className="flex-row-center">
+      <Button contents="Default" shape="round" />
+      <Button contents="White" color="white" shape="round" />
+      <Button contents="Orange" color="orange" shape="round" />
+      <Button contents="Black" color="black" shape="round" />
+    </div>
+    <h2>Toggle</h2>
+    <div className="flex-row-center">
+      <Button contents="Default" type="toggle" shape="round" />
+      <Button contents="White" type="toggle" color="white" shape="round" />
+      <Button contents="Orange" type="toggle" color="orange" shape="round" />
+      <Button contents="Black" type="toggle" color="black" shape="round" />
+    </div>
+  </div>
+);
+
+export const SquareButton = () => (
+  <div className="flex-colomn">
+    <h2>Button</h2>
+    <div className="flex-row-center">
+      <Button contents="Default" shape="square" />
+      <Button contents="White" color="white" shape="square" />
+      <Button contents="Orange" color="orange" shape="square" />
+      <Button contents="Black" color="black" shape="square" />
+    </div>
+    <h2>Toggle</h2>
+    <div className="flex-row-center">
+      <Button contents="Default" type="toggle" shape="square" />
+      <Button contents="White" type="toggle" color="white" shape="square" />
+      <Button contents="Orange" type="toggle" color="orange" shape="square" />
+      <Button contents="Black" type="toggle" color="black" shape="square" />
+    </div>
   </div>
 );

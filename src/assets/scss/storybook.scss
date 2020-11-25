@@ -1,6 +1,18 @@
-.flex-center-center {
+.flex-row-center {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
+  & > * {
+    margin-right: 10px;
+  }
+  & > *:last-child {
+    margin-right: 0;
+  }
+}
+.flex-colomn {
+  display: flex;
+  flex-direction: column;
+  & > * {
+    margin-bottom: 10px;
+  }
 }
