@@ -51,10 +51,10 @@ yarn storybook
 // .env
 
 // Window 설정
-SASS_PATH=node_modules:./node_modules;./src/assets/scss
+SASS_PATH=node_modules:./node_modules;./src/assets/
 
 // Mac 설정
-SASS_PATH=node_modules:src/assets/scss
+SASS_PATH=node_modules:src/assets/
 ```
 
 ### node-sass 버전때문에 생기는 이슈(20.11.18)
