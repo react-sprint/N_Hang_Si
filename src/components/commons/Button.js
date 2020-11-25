@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import useToggle from '@/utils/hooks/useToggle';
 
 import '@/assets/scss/commons/Button.scss';
 
@@ -16,12 +17,20 @@ Button
   contents
 */
 
-const Button = ({ contents, shape, color }) => {
-  // 토글 추가 예정
+const Button = ({ contents, shape, color, toggle, type }) => {
+  if (type === 'toggle') {
+    const [isToggle, onToggle] = useToggle(toggle);
+    return (
+      <button
+        onClick={onToggle}
+        className={classNames('button', shape, color, isToggle ? 'active' : '')}
+      >
+        {contents}
+      </button>
+    );
+  }
   return (
-    <button type="button" className={classNames('button', shape, color)}>
-      {contents}
-    </button>
+    <button className={classNames('button', shape, color)}>{contents}</button>
   );
 };
 
@@ -29,6 +38,8 @@ Button.defaultProps = {
   contents: 'empty',
   shape: 'default',
   color: 'white',
+  toggle: false,
+  type: 'button',
 };
 
 export default Button;
