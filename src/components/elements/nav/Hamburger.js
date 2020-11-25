@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import useOutSideClick from '@/utils/hooks/useOutSideClick';
 
-import '@/assets/elements/nav/Hamburger.scss';
+import '@/assets/scss/elements/nav/Hamburger.scss';
 
 /* 
 Hamburger
