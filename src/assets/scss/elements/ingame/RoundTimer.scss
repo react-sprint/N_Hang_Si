@@ -1,0 +1,109 @@
+@import 'utils/variables.scss';
+
+.round-timer {
+  @keyframes showTimer {
+    0% {
+      opacity: 0%;
+      transform: scale(0.5);
+      margin-top: 40px;
+    }
+    18% {
+      opacity: 100%;
+      transform: scale(1);
+      margin-top: 10px;
+    }
+
+    30% {
+      margin-top: -15px;
+    }
+
+    40% {
+      margin-top: 10px;
+    }
+    50% {
+      margin-top: 0px;
+    }
+    70% {
+      margin-top: 30px;
+    }
+    90% {
+      transform: scale(1);
+      margin-top: 20px;
+    }
+    100% {
+      margin-top: 40px;
+      transform: scale(0);
+    }
+  }
+  position: relative;
+  width: 190px;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: 3.5s showTimer ease-in;
+  animation-iteration-count: 1;
+  transform: scale(0);
+
+  &--number {
+    font-family: $font-stack-en;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: $color-orange-1;
+  }
+
+  &--inner {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+
+      circle {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: #f3f3f3;
+        stroke-width: 10;
+        stroke-linecap: round;
+
+        &:nth-child(2) {
+          @keyframes drawStroke {
+            0% {
+              stroke-dasharray: 432;
+              stroke-dashoffset: 432;
+            }
+            100% {
+              stroke-dashoffset: 0;
+            }
+          }
+          stroke: $color-orange-1;
+          animation: 4s drawStroke ease-in both;
+        }
+      }
+    }
+  }
+
+  &--outer {
+    @keyframes rotateRound {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: rotate(100deg) scale(1.1);
+      }
+    }
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../../../images/round.png');
+    background-size: 100%;
+    animation: 1s rotateRound infinite ease-out alternate;
+  }
+}
