@@ -3,12 +3,18 @@
 
 .hamburger {
   @include space-clear;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
   transition: opacity 0.3s;
   &__line {
-    width: 5rem;
-    height: 0.5rem;
+    width: 2.4rem;
+    height: 0.4rem;
     background-color: $color-orange-1;
-    margin: 8px auto;
+    margin: 0.24rem 0rem;
     transition: all 0.3s ease-in-out;
     border-radius: 5px;
   }
@@ -16,12 +22,10 @@
     opacity: 0;
   }
   &.active > &__line:nth-child(1) {
-    background-color: $color-white;
-    transform: translateY(13px) rotate(45deg);
+    transform: translateY(0.88rem) rotate(45deg);
   }
   &.active > &__line:nth-child(3) {
-    background-color: $color-white;
-    transform: translateY(-13px) rotate(-45deg);
+    transform: translateY(-0.88rem) rotate(-45deg);
   }
   &:hover {
     cursor: pointer;
