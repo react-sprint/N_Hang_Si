@@ -16,9 +16,10 @@ Button
     black
   contents
 */
+const TOGGLE = 'toggle';
 
 const Button = ({ contents, shape, color, toggle, type }) => {
-  if (type === 'toggle') {
+  if (type === TOGGLE) {
     const [isToggle, onToggle] = useToggle(toggle);
     return (
       <button
