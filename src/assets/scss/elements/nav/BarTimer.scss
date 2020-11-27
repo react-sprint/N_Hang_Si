@@ -1,0 +1,15 @@
+@import 'utils/variables.scss';
+
+.bartimer {
+  height: 0.8rem;
+  width: 100%;
+  background-color: $timer-background;
+  .progresstime {
+    width: 0;
+    height: 0.8rem;
+    background-color: $color-orange-1;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition-timing-function: linear;
+  }
+}
