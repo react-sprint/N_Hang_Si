@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 
 import '@/assets/scss/elements/nav/BarTimer.scss';
 
-const BarTimer = ({ time, timeout }) => {
+const BarTimer = ({ time, timeout, isActive }) => {
   const [timerStyle, setTimerStyle] = useState({});
   useEffect(() => {
-    setTimerStyle({
-      transitionDuration: `${timeout}s`,
-      width: `100%`,
-    });
+    if (isActive) {
+      setTimerStyle({
+        transitionDuration: `${timeout}s`,
+        width: `100%`,
+      });
+    }
     if (time / timeout > 0.7) {
       setTimerStyle({
         ...timerStyle,
@@ -28,6 +30,7 @@ const BarTimer = ({ time, timeout }) => {
 BarTimer.defaultProps = {
   time: 0,
   timeout: 100,
+  isActive: true,
 };
 
 export default BarTimer;
