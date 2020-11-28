@@ -1,0 +1,55 @@
+@import 'utils/variables.scss';
+
+.resultbox {
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    li {
+      width: 24.9%;
+      text-align: center;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  }
+  padding: 2.2rem 0;
+  span {
+    display: block;
+  }
+
+  &-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  &-body {
+    font-size: 1.2rem;
+    margin-top: 0.7rem;
+  }
+
+  &-topic {
+    background-color: $color-white;
+    .resultbox-title {
+      color: $color-gray-0;
+    }
+    .resultbox-body {
+      color: $color-gray-0;
+    }
+  }
+  &-timer {
+    background-color: #2e2e2e;
+    .resultbox-title {
+      color: $color-white;
+    }
+    .resultbox-body {
+      color: $color-orange-3;
+    }
+  }
+  &-level {
+    background-color: $color-gray-0;
+    .resultbox-title {
+      color: $color-white;
+    }
+    .resultbox-body {
+      color: $color-gray-4;
+    }
+  }
+}
