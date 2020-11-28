@@ -9,7 +9,7 @@
   }
   &.orange {
     background-color: $color-orange-1;
-    color: $color-black;
+    color: $color-white;
     &:hover,
     &.active {
       background-color: $color-orange-2;
@@ -31,7 +31,6 @@
     &:hover,
     &.active {
       background-color: $color-gray-1;
-      color: $color-orange-2;
     }
   }
 }

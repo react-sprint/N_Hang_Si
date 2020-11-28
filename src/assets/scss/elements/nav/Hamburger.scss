@@ -14,18 +14,18 @@
     width: 2.4rem;
     height: 0.4rem;
     background-color: $color-orange-1;
-    margin: 0.24rem 0rem;
+    margin: 0.17rem 0rem;
     transition: all 0.3s ease-in-out;
     border-radius: 5px;
   }
-  &.active > &__line:nth-child(2) {
+  &.active > &__line:first-of-type + &__line {
     opacity: 0;
   }
-  &.active > &__line:nth-child(1) {
-    transform: translateY(0.88rem) rotate(45deg);
+  &.active > &__line:first-of-type {
+    transform: translateY(0.735rem) rotate(45deg);
   }
-  &.active > &__line:nth-child(3) {
-    transform: translateY(-0.88rem) rotate(-45deg);
+  &.active > &__line:last-of-type {
+    transform: translateY(-0.735rem) rotate(-45deg);
   }
   &:hover {
     cursor: pointer;
