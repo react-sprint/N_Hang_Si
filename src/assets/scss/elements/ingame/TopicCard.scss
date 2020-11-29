@@ -1,0 +1,42 @@
+@import 'utils/variables.scss';
+
+.slider {
+  &__box {
+    &--card {
+      padding: 28px;
+
+      .title {
+        position: relative;
+        width: 96px;
+        height: 96px;
+        margin: 0 auto;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 96px;
+        font-weight: 700;
+        font-size: 50px;
+        color: #f58220;
+        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.1);
+
+        &--count {
+          position: absolute;
+          bottom: -20px;
+          left: -20px;
+          color: #9c9c9c;
+          background: #444;
+          width: 42px;
+          height: 42px;
+          line-height: 42px;
+          border-radius: 50%;
+          font-weight: 700;
+          font-size: 14px;
+          text-align: center;
+
+          span {
+            color: #dddddd;
+          }
+        }
+      }
+    }
+  }
+}

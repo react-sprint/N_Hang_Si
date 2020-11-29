@@ -1,32 +1,18 @@
-import React, { useState } from 'react';
-// import classNames from 'classnames';
-import '@/assets/scss/layouts/ingame/Slider.scss';
-import Textarea from '@/components/commons/Textarea';
+import React from 'react';
+import '@/assets/scss/layouts/ingame/SliderBox.scss';
+// components
+import SliderBox from './SliderBox';
 
 function Slider({ topic }) {
-  const [value, setValue] = useState('');
+  const topicArray = topic.split('');
   return (
-    <div className="slider-wrap">
-      <div className="slider">
-        <div className="slider__box">
-          <div className="slider__box--card">
-            <div className="title">
-              {topic}
-              <div className="title--count">
-                <span>1</span>/3
-              </div>
-            </div>
-          </div>
-          <div className="slider__box--text">
-            <Textarea
-              placeholder="클릭하여 입력해주세요"
-              value={value}
-              onChange={setValue}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      {topicArray.map(function (wordNow, wordIndex) {
+        return (
+          <SliderBox topic={topic} wordNow={wordNow} wordIndex={wordIndex} />
+        );
+      })}
+    </>
   );
 }
 

@@ -1,0 +1,16 @@
+@import 'utils/variables.scss';
+
+.slider__box {
+  &--text {
+    display: flex;
+    justify-content: center;
+    padding: 28px;
+
+    textarea {
+      display: block;
+      width: 100%;
+      min-height: 4.5rem;
+      border-radius: 5px;
+    }
+  }
+}
