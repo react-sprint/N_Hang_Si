@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import LikeSvg from '@/assets/images/svg/LikeSvg';
@@ -12,11 +12,7 @@ const RankInfo = ({ nickName, timeOut, time, level, like, isLike }) => {
     e.preventDefault();
   };
   return (
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    <div
-      className={classNames('rankinfo', isToggle ? 'active' : '')}
-      onClick={onClick}
-    >
+    <div className={classNames('rankinfo', isToggle ? 'active' : '')}>
       <p className={classNames('rankinfo__toprank', isToggle ? 'active' : '')}>
         1
       </p>
@@ -39,7 +35,11 @@ const RankInfo = ({ nickName, timeOut, time, level, like, isLike }) => {
             <p className={isToggle ? 'active' : ''}>{level}</p>
           </div>
         </div>
-        <div className={classNames('infolike', isToggle ? 'active' : '')}>
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+        <div
+          className={classNames('infolike', isToggle ? 'active' : '')}
+          onClick={onClick}
+        >
           <LikeSvg isActive={isToggle} />
           <p>{like}</p>
         </div>
