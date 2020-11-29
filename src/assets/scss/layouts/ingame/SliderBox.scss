@@ -1,10 +1,13 @@
 @import 'utils/variables.scss';
 
 .slider__box {
+  min-width: 30rem;
+  margin: 2.6rem;
+  box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.1);
   &--text {
     display: flex;
     justify-content: center;
-    padding: 28px;
+    padding: 2.8rem;
 
     textarea {
       display: block;
