@@ -49,6 +49,7 @@
     font-family: $font-stack-en;
     font-size: 3.2rem;
     font-weight: 700;
+    letter-spacing: -0.1rem;
     color: $color-orange-1;
   }
 
@@ -56,12 +57,19 @@
     position: absolute;
     width: 100px;
     height: 100px;
+    @keyframes defaultRotate {
+      0% {
+        transform: rotate(-90deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    animation: 3.5s defaultRotate ease-in;
 
     svg {
       width: 100%;
       height: 100%;
-      transform: rotate(-90deg);
-
       circle {
         width: 100%;
         height: 100%;
@@ -76,12 +84,17 @@
               stroke-dasharray: 432;
               stroke-dashoffset: 432;
             }
+            20% {
+              stroke-dashoffset: 300;
+              stroke-dashoffset: 400;
+            }
             100% {
-              stroke-dashoffset: 0;
+              stroke-dashoffset: -432;
+              stroke-dashoffset: -432;
             }
           }
           stroke: $color-orange-1;
-          animation: 4s drawStroke ease-in both;
+          animation: 5s drawStroke ease-in both;
         }
       }
     }
@@ -93,10 +106,10 @@
         transform: rotate(0deg);
       }
       50% {
-        transform: scale(1);
+        transform: scale(0.95);
       }
       100% {
-        transform: rotate(100deg) scale(1.1);
+        transform: rotate(100deg) scale(0.95);
       }
     }
     position: absolute;
