@@ -1,55 +1,56 @@
 @import 'utils/variables.scss';
 
 .resultbox {
-  &-container {
-    display: flex;
-    justify-content: space-between;
-    li {
-      width: 24.9%;
-      text-align: center;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-  }
+  text-align: center;
   padding: 2.2rem 0;
+  border-radius: 8px;
   span {
-    display: block;
+    display: inline-block;
+    width: 100%;
   }
 
-  &-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-  &-body {
-    font-size: 1.2rem;
-    margin-top: 0.7rem;
+  span {
+    &:first-of-type {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    &:last-of-type {
+      font-size: 1.2rem;
+      margin-top: 0.7rem;
+    }
   }
 
-  &-topic {
+  &.white {
     background-color: $color-white;
-    .resultbox-title {
-      color: $color-gray-0;
-    }
-    .resultbox-body {
-      color: $color-gray-0;
+    span {
+      &:first-of-type {
+        color: $color-gray-0;
+      }
+      &:last-of-type {
+        color: $color-gray-0;
+      }
     }
   }
-  &-timer {
+  &.black {
     background-color: #2e2e2e;
-    .resultbox-title {
-      color: $color-white;
-    }
-    .resultbox-body {
-      color: $color-orange-3;
+    span {
+      &:first-of-type {
+        color: $color-white;
+      }
+      &:last-of-type {
+        color: $color-orange-3;
+      }
     }
   }
-  &-level {
+  &.gray {
     background-color: $color-gray-0;
-    .resultbox-title {
-      color: $color-white;
-    }
-    .resultbox-body {
-      color: $color-gray-4;
+    span {
+      &:first-of-type {
+        color: $color-white;
+      }
+      &:last-of-type {
+        color: $color-gray-4;
+      }
     }
   }
 }
