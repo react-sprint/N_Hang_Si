@@ -28,10 +28,14 @@ $rankBox-dim-gray: $color-gray-4;
 $rankBox-dim-orange: $color-orange-3;
 
 //background
-$wrapper-background: #fafafa;
+$color-wrapper-background: #fafafa;
 
 // nav, header...
-$timer-background: #efefef;
+$color-timer-background: #efefef;
+
+// result
+$color-fail: #ff5050;
+$color-success: #5096ff;
 
 // ****************
 // Font Size
