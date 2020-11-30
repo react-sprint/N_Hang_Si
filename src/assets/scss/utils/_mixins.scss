@@ -79,3 +79,15 @@ $breakpoints: (
   font-size: $font-size-3;
   font-family: $font-stack-ko;
 }
+
+// ****************
+// Function
+// ****************
+
+@mixin drag-protect {
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+} ;

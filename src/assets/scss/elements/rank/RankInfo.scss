@@ -1,13 +1,10 @@
 @import 'utils/variables.scss';
+@import 'utils/mixins.scss';
 
 .rankinfo {
+  @include drag-protect;
   display: flex;
   align-items: flex-end;
-  -ms-user-select: none;
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
   &__toprank {
     width: 7.4rem;
     margin-right: 2.4rem;
@@ -18,13 +15,16 @@
     &.active {
       color: $color-orange-1;
     }
+    &.general {
+      display: none;
+    }
   }
   &__container {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 10.8rem;
+    min-height: 10.8rem;
     padding: 2.6rem 2.2rem;
     background-color: $color-gray-0;
     border-radius: 0px 0px 10px 10px;
@@ -35,22 +35,30 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      p {
+        font-size: $font-size-4;
+        color: $color-gray-4;
+        font-weight: $font-weight-medium;
+      }
+      &.active {
+        color: $color-orange-3;
+      }
+      .ranker {
+        display: none;
+      }
+      .general {
+        margin-bottom: 1rem;
+      }
       &__box {
         display: flex;
-        p {
-          font-size: $font-size-4;
-          &:first-of-type {
-            width: 6.8rem;
-            color: $color-white;
-            font-weight: $font-weight-bold;
-          }
-          &:last-child {
-            color: $color-gray-4;
-            font-weight: $font-weight-medium;
-            &.active {
-              color: $color-orange-3;
-            }
-          }
+        margin-bottom: 0.5rem;
+        &:last-child {
+          margin: 0;
+        }
+        p + &--title {
+          width: 6.8rem;
+          color: $color-white;
+          font-weight: $font-weight-bold;
         }
       }
     }
