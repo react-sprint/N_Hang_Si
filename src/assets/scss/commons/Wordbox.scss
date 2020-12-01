@@ -8,25 +8,27 @@
   &:last-child {
     margin-bottom: 0;
   }
-  &-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: $color-orange-1;
-    position: relative;
-    text-align: center;
-    padding: 1.75rem 0;
-    background-color: $color-white;
-    span {
-      display: inline-block;
-      min-width: 6.8rem;
+  p {
+    &:first-child {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $color-orange-1;
+      position: relative;
+      text-align: center;
+      padding: 1.75rem 0;
       background-color: $color-white;
+      span {
+        display: inline-block;
+        min-width: 6.8rem;
+        background-color: $color-white;
+      }
     }
-  }
-  &-body {
-    width: 100%;
-    padding: 1.1rem 2rem;
-    color: $color-gray-2;
-    background-color: $color-gray-6;
-    font-size: 1.2rem;
+    &:last-child {
+      width: 100%;
+      padding: 1.1rem 2rem;
+      color: $color-gray-2;
+      background-color: $color-gray-6;
+      font-size: 1.2rem;
+    }
   }
 }
