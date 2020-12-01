@@ -10,8 +10,8 @@
   }
   p {
     &:first-of-type {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: $font-size-1;
+      font-weight: $font-weight-bold;
       color: $color-orange-1;
       position: relative;
       text-align: center;
