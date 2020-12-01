@@ -5,10 +5,10 @@
     0% {
       opacity: 0%;
       transform: scale(0.5);
-      margin-top: 50px;
+      margin-top: 5rem;
     }
     5% {
-      margin-top: 10px;
+      margin-top: 1rem;
     }
     10% {
       opacity: 100%;
@@ -18,23 +18,23 @@
       margin-top: 0px;
     }
     50% {
-      margin-top: 20px;
+      margin-top: 2rem;
     }
     70% {
-      margin-top: 30px;
+      margin-top: 3rem;
     }
     90% {
       transform: scale(1);
-      margin-top: 20px;
+      margin-top: 2rem;
     }
     100% {
-      margin-top: 40px;
+      margin-top: 4rem;
       transform: scale(0);
     }
   }
   position: relative;
-  width: 190px;
-  height: 190px;
+  width: 19rem;
+  height: 19rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@
   &--number {
     font-family: $font-stack-en;
     font-size: 3.2rem;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     letter-spacing: -0.1rem;
     color: $color-orange-1;
   }
