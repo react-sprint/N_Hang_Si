@@ -5,7 +5,7 @@ import '@/assets/images/round.png';
 const RoundTimer = ({ time, isReady }) => {
   return (
     <>
-      {isReady ? (
+      {!isReady ? (
         <div className="round-timer">
           <p className="round-timer--number">
             {time}

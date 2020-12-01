@@ -15,15 +15,15 @@
         line-height: 9.6rem;
         font-weight: 700;
         font-size: 5rem;
-        color: #f58220;
-        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.1);
+        color: $color-orange-1;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
 
         &--count {
           position: absolute;
           bottom: -2rem;
           left: -2rem;
-          color: #9c9c9c;
-          background: #444;
+          color: $color-gray-3;
+          background: $color-gray-0;
           width: 4.2rem;
           height: 4.2rem;
           line-height: 4.2rem;
@@ -33,7 +33,7 @@
           text-align: center;
 
           span {
-            color: #dddddd;
+            color: $color-gray-6;
           }
         }
       }
