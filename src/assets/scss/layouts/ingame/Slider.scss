@@ -1,5 +1,11 @@
 @import 'utils/variables.scss';
 
+.slider-wrap {
+  width: 38rem;
+  overflow: hidden;
+}
+
 .slider {
   display: flex;
+  border-radius: 3rem;
 }

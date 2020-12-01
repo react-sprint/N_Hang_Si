@@ -4,7 +4,7 @@ import '@/assets/scss/layouts/ingame/SliderBox.scss';
 import Textarea from '@/components/commons/Textarea';
 import TopicCard from '@/components/elements/ingame/TopicCard';
 
-function SliderBox({ topic, wordNow, wordIndex }) {
+const SliderBox = ({ topic, wordNow, wordIndex }) => {
   const [value, setValue] = useState('');
   return (
     <>
@@ -24,7 +24,7 @@ function SliderBox({ topic, wordNow, wordIndex }) {
       </div>
     </>
   );
-}
+};
 
 SliderBox.defaultProps = {
   topic: '순두부',
