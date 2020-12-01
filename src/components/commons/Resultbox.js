@@ -2,10 +2,10 @@ import React from 'react';
 import classNames from 'classnames';
 import '@/assets/scss/commons/Resultbox.scss';
 
-const ResultBox = ({ topic, text, color }) => {
+const ResultBox = ({ title, text, color }) => {
   return (
     <div className={classNames('resultbox', color)}>
-      <span>{topic}</span>
+      <span>{title}</span>
       <span>{text}</span>
     </div>
   );
@@ -14,7 +14,7 @@ const ResultBox = ({ topic, text, color }) => {
 export default ResultBox;
 
 ResultBox.defaultProps = {
-  topic: '주제어',
+  title: '주제어',
   text: '7자까지 쓸게요',
   color: 'black',
 };
