@@ -43,6 +43,14 @@ yarn storybook
 
 ## Issue
 
+## 개발 환경에 따른 babel-loader 이슈(20.11.29)
+
+개발 환경을 바꿨더니 `babel-loader` 버전에 대한 오류 발생, 버전 `8.1.0`을 설치해줌
+
+```bash
+npm install babel-loader@8.1.0
+```
+
 ### .env에서 OS 때문에 생기는 이슈(20.11.24)
 
 각 OS에 맞는 .env 설정이 필요함
