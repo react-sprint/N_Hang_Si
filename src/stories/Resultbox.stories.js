@@ -1,18 +1,18 @@
 import React from 'react';
-import Resultbox from '@/components/commons/Resultbox';
+import ResultBox from '@/components/commons/ResultBox';
 
 export default {
-  title: 'Resultbox',
-  component: Resultbox,
+  title: 'ResultBox',
+  component: ResultBox,
 };
 
 export const Default = () => (
   <div className="flex-colomn">
     <h2>Resultbox</h2>
     <div className="flex-row-center">
-      <Resultbox title="주제어" text="7자까지 쓸거요" color="white" />
-      <Resultbox title="소요시간" text="00:00" color="black" />
-      <Resultbox title="난이도" text="지렁이" color="gray" />
+      <ResultBox title="주제어" text="7자까지 쓸거요" color="white" />
+      <ResultBox title="소요시간" text="00:00" color="black" />
+      <ResultBox title="난이도" text="지렁이" color="gray" />
     </div>
   </div>
 );

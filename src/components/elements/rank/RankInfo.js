@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import LikeSvg from '@/assets/images/svg/LikeSvg';
@@ -52,10 +51,10 @@ const RankInfo = ({
             <p>{level}</p>
           </div>
         </div>
-        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
         <div
           className={classNames('infolike', isToggle ? 'active' : '')}
           onClick={onClick}
+          aria-hidden="true"
         >
           <LikeSvg isActive={isToggle} />
           <p>{like}</p>

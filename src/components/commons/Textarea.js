@@ -10,12 +10,13 @@ const Textarea = ({ text, placeholder }) => {
       value={value}
       placeholder={placeholder}
       onChange={onChange}
+      tabIndex={-1}
     />
   );
 };
 
 Textarea.defaultProps = {
-  text: '테스트 중입니다.',
+  text: '',
   placeholder: '입력해주세요.',
 };
 

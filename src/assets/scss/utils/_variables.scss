@@ -17,21 +17,23 @@ $color-gray-6: #dddddd;
 $color-orange-1: #f58220;
 $color-orange-2: #f4933f;
 $color-orange-3: #ffcb9e;
+$color-orange-4: #ffdfc5;
 
 // from default
 $default-border: $color-gray-6;
 $default-text: $color-gray-2;
 
-// boxes
-$numberBox-dim-gray: $color-gray-3;
-$rankBox-dim-gray: $color-gray-4;
-$rankBox-dim-orange: $color-orange-3;
-
 //background
-$wrapper-background: #fafafa;
+$color-wrapper-background: #fafafa;
 
 // nav, header...
-$timer-background: #efefef;
+$color-timer-background: #efefef;
+
+// result
+$color-fail: #ff5050;
+$color-success: #5096ff;
+
+$color-wordbox-background: #f2f2f2;
 
 // ****************
 // Font Size
@@ -42,6 +44,7 @@ $font-size-1: $font-size-base * 1.25; // 20px
 $font-size-2: $font-size-base * 1.125; // 18px
 $font-size-3: $font-size-base * 1; // 16px
 $font-size-4: $font-size-base * 0.875; // 14px
+$font-size-5: $font-size-base * 0.75; // 12px
 
 $h1-font-size: $font-size-base * 2.5; // 40px
 $h2-font-size: $font-size-base * 2.25; // 36px

@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import '@/assets/scss/commons/Resultbox.scss';
+import '@/assets/scss/commons/ResultBox.scss';
 
 const ResultBox = ({ title, text, color }) => {
   return (
