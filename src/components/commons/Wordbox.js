@@ -1,7 +1,7 @@
 import React from 'react';
-import '@/assets/scss/commons/Wordbox.scss';
+import '@/assets/scss/commons/WordBox.scss';
 
-const Wordbox = ({ topic, text }) => {
+const WordBox = ({ topic, text }) => {
   return (
     <div className="wordbox">
       <p className="wordbox-title">
@@ -12,9 +12,9 @@ const Wordbox = ({ topic, text }) => {
   );
 };
 
-Wordbox.defaultProps = {
+WordBox.defaultProps = {
   topic: '순',
   text: '위하여, 사랑의 그들의 인간은 유소년에게서 위하여서. 그',
 };
 
-export default Wordbox;
+export default WordBox;

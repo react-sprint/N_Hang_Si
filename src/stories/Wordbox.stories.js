@@ -1,10 +1,10 @@
 import React from 'react';
-import Wordbox from '@/components/commons/Wordbox';
+import WordBox from '@/components/commons/WordBox';
 
 export default {
-  title: 'Wordbox',
-  component: Wordbox,
+  title: 'WordBox',
+  component: WordBox,
 };
 
-export const Default = () => <Wordbox />;
-export const InValue = () => <Wordbox topic="단" text="테스트를 위한 값" />;
+export const Default = () => <WordBox />;
+export const InValue = () => <WordBox topic="단" text="테스트를 위한 값" />;
