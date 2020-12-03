@@ -11,7 +11,6 @@
     font-size: 13rem;
     font-weight: $font-weight-bold;
     text-align: center;
-    line-height: 8rem;
     &.active {
       color: $color-orange-1;
     }
@@ -41,7 +40,9 @@
         font-weight: $font-weight-medium;
       }
       &.active {
-        color: $color-orange-3;
+        p {
+          color: $color-orange-4;
+        }
       }
       .ranker {
         display: none;
@@ -55,9 +56,9 @@
         &:last-child {
           margin: 0;
         }
-        p + &--title {
+        &--title {
           width: 6.8rem;
-          color: $color-white;
+          color: $color-white !important;
           font-weight: $font-weight-bold;
         }
       }
