@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BarTimer from '@/components/elements/nav/BarTimer';
 import TextTimer from '@/components/elements/nav/TextTimer';
 import useInterval from '@/utils/hooks/useInterval';
 
 export default {
   title: 'Timer',
+  argTypes: {
+    time: {
+      control: { type: 'range', min: 20, max: 360, step: 20 },
+    },
+    start: {
+      control: 'boolean',
+    },
+  },
 };
 
-export const DefaultBarTimer = () => <BarTimer />;
-export const DefaultTextTimer = () => <TextTimer />;
-export const TimerTest = () => {
+export const Default = ({ time, start }) => {
   const [timer, setTimer] = useState(0);
-  const [timeOut, setTimeOut] = useState(10);
+  const timeOut = time;
   const [isRunning, setIsRunning] = useState(false);
-  const [change, setChange] = useState(false);
+  const [change, setChange] = useState(true);
   useInterval(
     () => {
       setTimer(timer + 1);
@@ -23,23 +29,19 @@ export const TimerTest = () => {
     },
     isRunning ? 1000 : null,
   );
-
-  const onClick = () => {
-    if (!change) {
-      setIsRunning(true);
-      setChange(true);
+  useEffect(() => {
+    if (change) {
+      if (start) {
+        setIsRunning(true);
+        setChange(true);
+      }
     }
-  };
-  const onChange = e => {
-    setTimeOut(e.target.value);
-  };
+  }, start);
 
   return (
     <div className="flex-colomn">
-      <input onChange={onChange} disabled={change} value={timeOut} />
       <TextTimer time={timer} timeout={timeOut} />
       <BarTimer time={timer} timeout={timeOut} isActive={isRunning} />
-      <button onClick={onClick}>테스트 시작</button>
     </div>
   );
 };

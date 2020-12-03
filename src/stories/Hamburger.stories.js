@@ -7,4 +7,3 @@ export default {
 };
 
 export const Default = () => <Hamburger />;
-export const TrueState = () => <Hamburger state />;
