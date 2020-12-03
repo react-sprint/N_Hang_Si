@@ -56,9 +56,10 @@
         &:last-child {
           margin: 0;
         }
-        &--title {
+        p + &--title,
+        .active > p + &--title {
           width: 6.8rem;
-          color: $color-white !important;
+          color: $color-white;
           font-weight: $font-weight-bold;
         }
       }
