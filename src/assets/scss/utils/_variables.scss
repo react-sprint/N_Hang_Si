@@ -17,15 +17,11 @@ $color-gray-6: #dddddd;
 $color-orange-1: #f58220;
 $color-orange-2: #f4933f;
 $color-orange-3: #ffcb9e;
+$color-orange-4: #ffdfc5;
 
 // from default
 $default-border: $color-gray-6;
 $default-text: $color-gray-2;
-
-// boxes
-$numberBox-dim-gray: $color-gray-3;
-$rankBox-dim-gray: $color-gray-4;
-$rankBox-dim-orange: $color-orange-3;
 
 //background
 $color-wrapper-background: #fafafa;
@@ -36,6 +32,8 @@ $color-timer-background: #efefef;
 // result
 $color-fail: #ff5050;
 $color-success: #5096ff;
+
+$color-wordbox-background: #f2f2f2;
 
 // ****************
 // Font Size

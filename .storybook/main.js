@@ -1,7 +1,7 @@
 const path = require('path');
 module.exports = {
   stories: ['../src/stories/**/*.stories.js'],
-  addons: ['@storybook/addon-actions', '@storybook/preset-create-react-app'],
+  addons: ['@storybook/addon-essentials', '@storybook/preset-create-react-app'],
   webpackFinal: async config => {
     config.module.rules = [
       {
