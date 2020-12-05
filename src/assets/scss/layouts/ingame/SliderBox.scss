@@ -1,17 +1,27 @@
 @import 'utils/variables.scss';
+@import 'utils/mixins.scss';
 
-.slider__box {
-  flex: 1;
-  min-width: 34rem;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem;
+.slider-wrap {
+  @include drag-protect();
+  background: $color-white;
+  border-radius: 2.7rem;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.06);
-  border-radius: 30px;
+  overflow: hidden;
+}
+.slider {
+  width: 300%;
+  transition: 0.6s ease-in-out;
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+  &__box {
+    float: left;
 
-  &--text {
-    display: flex;
-    justify-content: center;
-    padding: 2.8rem;
+    &--text {
+      width: 100%;
+      padding-bottom: 2.8rem;
+    }
   }
 }
