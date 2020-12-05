@@ -2,6 +2,9 @@
 
 .textarea {
   display: block;
+  width: 80%;
+  margin: 0 auto;
+  min-height: 10rem;
   border-radius: 5px;
   &:hover {
     border-color: $color-orange-1;
