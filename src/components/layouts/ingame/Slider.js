@@ -15,7 +15,7 @@ const Slider = ({ topic }) => {
         className="slider"
         style={{
           width: `${topic.length * 100}%`,
-          marginLeft: `-${indexNow * 100}rem`,
+          marginLeft: `-${`${indexNow}` * 100}%`,
         }}
       >
         {topicArray.map((word, index) => {
