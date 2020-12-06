@@ -1,0 +1,64 @@
+@import 'utils/variables.scss';
+
+.result-bar {
+  position: relative;
+  &--title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: $color-white;
+    background: $color-success;
+    font-size: $font-size-2;
+    padding: 3.4rem 6.4rem;
+    text-align: center;
+    border-radius: 60px 60px 0 0;
+    letter-spacing: 1em;
+  }
+  &--desc {
+    position: relative;
+    top: 7rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.success {
+  .result-bar {
+    &--title {
+      color: $color-white;
+      background: $color-success;
+    }
+    &--desc {
+      background: url('../../images/banner3.png') no-repeat center center;
+      background-size: 90%;
+      padding-bottom: 15rem;
+    }
+  }
+}
+
+.failed {
+  .result-bar {
+    &--title {
+      color: $color-white;
+      background: $color-fail;
+    }
+    &--desc {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-self: center;
+      font-size: $font-size-4;
+      text-align: center;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+      background: url('../../images/banner3.png') no-repeat center 45%;
+      background-size: 90%;
+      .main {
+        font-size: 2.8rem;
+        font-weight: $font-weight-bold;
+        color: $color-fail;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
