@@ -39,7 +39,7 @@ const ResultBackground = ({ success }) => {
 };
 
 ResultBackground.defaultProps = {
-  success: true,
+  success: false,
 };
 
 export default ResultBackground;
