@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 
-import useOutSideClick from '@/utils/hooks/useOutSideClick';
+import useNavToggle from '@/utils/hooks/useNavToggle';
 
 import '@/assets/scss/elements/nav/Hamburger.scss';
 
-/* 
-Hamburger
-  el
-  state
-*/
-
-const Hamburger = ({ el, state }) => {
-  const [isActive, setIsActive] = useOutSideClick(el, state);
+const Hamburger = ({ el, state, hook }) => {
+  const [isActive, setIsActive] = useNavToggle(el, state);
+  const onClick = () => {
+    setIsActive(!isActive);
+  };
+  useEffect(() => {
+    hook(isActive);
+  });
   return (
     <button
       className={classNames('hamburger', isActive ? 'active' : '')}
-      onClick={() => setIsActive(!isActive)}
+      onClick={onClick}
     >
       <div className="hamburger__line" />
       <div className="hamburger__line" />
@@ -28,6 +28,7 @@ const Hamburger = ({ el, state }) => {
 Hamburger.defaultProps = {
   el: '',
   state: false,
+  hook: () => {},
 };
 
 export default Hamburger;

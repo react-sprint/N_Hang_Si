@@ -39,7 +39,7 @@ export const Default = ({ time, start }) => {
   }, start);
 
   return (
-    <div className="flex-colomn">
+    <div className="flex-culomn">
       <TextTimer time={timer} timeout={timeOut} />
       <BarTimer time={timer} timeout={timeOut} isActive={isRunning} />
     </div>

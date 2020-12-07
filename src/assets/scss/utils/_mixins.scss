@@ -57,6 +57,19 @@ $breakpoints: (
 }
 
 // ****************
+// LayOut
+// ****************
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  @include flex-column;
+  align-items: center;
+}
+
+// ****************
 // SpaceType
 // ****************
 
@@ -90,4 +103,9 @@ $breakpoints: (
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-} ;
+}
+
+@mixin nav-sliding-time {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
