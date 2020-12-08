@@ -7,21 +7,22 @@ export default {
   argTypes: {
     ranking: {
       control: { type: 'range', min: 1 },
+      defaultValue: 1,
     },
     nickname: {
       control: 'text',
     },
     time: {
-      control: 'text',
+      control: 'number',
     },
     timeOut: {
-      control: 'text',
+      control: 'number',
     },
     level: {
       control: { type: 'select', options: ['지렁이', '일반인', '박명수'] },
     },
     like: {
-      control: 'text',
+      control: 'number',
     },
   },
 };

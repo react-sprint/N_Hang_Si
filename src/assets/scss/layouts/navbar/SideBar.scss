@@ -63,10 +63,11 @@
       @include flex-column-center;
       a {
         cursor: pointer;
-        color: white;
+        margin-bottom: 0.2rem;
+        color: $color-white;
         opacity: 0.5;
         font-size: $font-size-5;
-        margin-bottom: 0.2rem;
+        line-height: 1.4rem;
         &:hover {
           color: white;
           opacity: 1;
