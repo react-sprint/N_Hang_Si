@@ -35,7 +35,7 @@ const RankInfo = ({
         className={classNames('rankinfo__container', isToggle ? 'active' : '')}
       >
         <div className={classNames('infotext', isToggle ? 'active' : '')}>
-          <p className={isRanker ? 'ranker' : 'general'}>{ranking}</p>
+          <p className={isRanker ? 'ranker' : 'general'}>{ranking}위</p>
           <div className="infotext__box">
             <p className="infotext__box--title">작가명</p>
             <p>{nickname}</p>
@@ -57,7 +57,7 @@ const RankInfo = ({
           aria-hidden="true"
         >
           <LikeSvg isActive={isToggle} />
-          <p>{like}</p>
+          <p>{like < 100 ? like : '99+'}</p>
         </div>
       </div>
     </div>
@@ -67,10 +67,10 @@ const RankInfo = ({
 RankInfo.defaultProps = {
   isLike: false,
   nickname: '방구석 호랑이',
-  timeOut: '50',
-  time: '20',
+  timeOut: 50,
+  time: 20,
   level: '지렁이',
-  like: '31',
+  like: 31,
   ranking: 1,
 };
 

@@ -4,10 +4,13 @@
 .rankinfo {
   @include drag-protect;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   &__toprank {
     width: 7.4rem;
-    margin-right: 2.4rem;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+    color: $color-gray-0;
+    font-family: $font-stack-en;
     font-size: 13rem;
     font-weight: $font-weight-bold;
     text-align: center;
@@ -22,6 +25,7 @@
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+    position: relative;
     width: 100%;
     min-height: 10.8rem;
     padding: 2.6rem 2.2rem;
@@ -65,10 +69,13 @@
       }
     }
     .infolike {
+      display: block;
+      position: absolute;
+      top: 2.6rem;
+      right: 2.2rem;
+      width: 2.4rem;
+      text-align: center;
       cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       svg {
         margin-bottom: 0.4rem;
       }
