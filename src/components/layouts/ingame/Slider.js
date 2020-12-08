@@ -1,13 +1,8 @@
 import React from 'react';
 import '@/assets/scss/layouts/ingame/Slider.scss';
-import { useSelector } from 'react-redux';
-// components
 import SliderBox from './SliderBox';
 
-const Slider = ({ topic }) => {
-  const { indexNow } = useSelector(state => ({
-    indexNow: state.ingame.indexNow,
-  }));
+const Slider = ({ topic, indexNow, hook }) => {
   const topicArray = topic.split('');
   return (
     <div className="slider-wrap">
@@ -24,6 +19,7 @@ const Slider = ({ topic }) => {
               topic={topic}
               wordNow={topicArray[index]}
               pageIndex={index}
+              hook={hook}
             />
           );
         })}
@@ -34,6 +30,8 @@ const Slider = ({ topic }) => {
 
 Slider.defaultProps = {
   topic: '순두부',
+  indexNow: 0,
+  hook: () => {},
 };
 
 export default Slider;
