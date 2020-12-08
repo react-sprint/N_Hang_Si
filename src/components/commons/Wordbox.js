@@ -5,7 +5,7 @@ const WordBox = ({ topic, text }) => {
   return (
     <div className="wordbox">
       <p className="wordbox-title">
-        <span>{topic}</span>
+        <span>{topic.charAt(0)}</span>
       </p>
       <p className="wordbox-body">{text}</p>
     </div>
