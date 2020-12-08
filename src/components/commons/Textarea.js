@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import '@/assets/scss/commons/Textarea.scss';
 
-const Textarea = ({ placeholder, hook }) => {
+const Textarea = ({ text, placeholder, hook }) => {
   const [value, setValue] = useState('');
   const onChange = e => {
     setValue(e.target.value);
-    hook(value);
+    hook(e.target.value);
   };
   return (
     <textarea
