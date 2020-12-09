@@ -1,5 +1,11 @@
 @import 'utils/variables.scss';
+@import 'utils/mixins.scss';
 
-.slider {
-  display: flex;
+.slider-wrap {
+  @include drag-protect();
+  background: $color-white;
+  border-radius: 2.7rem;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  margin-bottom: 4rem;
 }

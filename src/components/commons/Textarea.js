@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '@/assets/scss/commons/Textarea.scss';
-import useInput from '@/utils/hooks/useInput';
 
-const Textarea = ({ text, placeholder }) => {
-  const { value, onChange } = useInput(text);
+const Textarea = ({ placeholder, hook }) => {
+  const [value, setValue] = useState('');
+  const onChange = e => {
+    setValue(e.target.value);
+    hook(e.target.value);
+  };
   return (
     <textarea
       className="textarea"
@@ -18,6 +21,7 @@ const Textarea = ({ text, placeholder }) => {
 Textarea.defaultProps = {
   text: '',
   placeholder: '입력해주세요.',
+  hook: () => {},
 };
 
 export default Textarea;

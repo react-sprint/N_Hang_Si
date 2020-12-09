@@ -4,26 +4,18 @@ import useToggle from '@/utils/hooks/useToggle';
 
 import '@/assets/scss/commons/Button.scss';
 
-/* 
-Button
-  shape
-    default
-    round
-    square
-  color
-    orange
-    white
-    black
-  contents
-*/
 const TOGGLE = 'toggle';
 
-const Button = ({ contents, shape, color, toggle, type }) => {
+const Button = ({ contents, shape, color, toggle, type, hook }) => {
+  const [isToggle, onToggle] = useToggle(toggle);
+  const onClick = () => {
+    onToggle();
+    hook();
+  };
   if (type === TOGGLE) {
-    const [isToggle, onToggle] = useToggle(toggle);
     return (
       <button
-        onClick={onToggle}
+        onClick={onClick}
         className={classNames('button', shape, color, isToggle ? 'active' : '')}
       >
         {contents}
@@ -31,7 +23,9 @@ const Button = ({ contents, shape, color, toggle, type }) => {
     );
   }
   return (
-    <button className={classNames('button', shape, color)}>{contents}</button>
+    <button onClick={onClick} className={classNames('button', shape, color)}>
+      {contents}
+    </button>
   );
 };
 
@@ -41,6 +35,7 @@ Button.defaultProps = {
   color: 'white',
   toggle: false,
   type: 'button',
+  hook: () => {},
 };
 
 export default Button;
