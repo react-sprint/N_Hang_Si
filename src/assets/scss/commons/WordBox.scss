@@ -1,0 +1,34 @@
+@import 'utils/variables.scss';
+
+.wordbox {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.8rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  p {
+    &:first-of-type {
+      font-size: $font-size-1;
+      font-weight: $font-weight-bold;
+      color: $color-orange-1;
+      position: relative;
+      text-align: center;
+      padding: 1.75rem 0;
+      background-color: $color-white;
+      span {
+        display: inline-block;
+        min-width: 6.8rem;
+        background-color: $color-white;
+      }
+    }
+    &:last-of-type {
+      width: 100%;
+      padding: 1.1rem 2rem;
+      color: $color-gray-2;
+      background-color: $color-wordbox-background;
+      font-size: $font-size-5;
+    }
+  }
+}

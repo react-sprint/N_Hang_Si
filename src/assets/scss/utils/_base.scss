@@ -11,11 +11,12 @@ header {
   flex-direction: column;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 main {
   @include nav-sliding-time;
-  margin-top: 7rem;
+  padding: 4rem 1.6rem;
   z-index: -1;
   &.active {
     -webkit-transform: translateX(-20rem);
@@ -28,7 +29,6 @@ main {
     transform: translateX(0);
   }
 }
-
 h1,
 h2 {
   font-weight: $font-weight-bold;
@@ -149,4 +149,8 @@ textarea {
   resize: none;
   line-height: 1.2;
   outline: none;
+}
+
+hr {
+  border: 1px dashed $color-hr;
 }
