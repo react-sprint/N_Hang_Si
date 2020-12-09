@@ -13,6 +13,7 @@
     text-align: center;
     border-radius: 60px 60px 0 0;
     letter-spacing: 1em;
+    text-indent: 1em;
   }
   &--desc {
     position: relative;
@@ -29,8 +30,8 @@
       background: $color-success;
     }
     &--desc {
-      background: url('../../../images/banner3.png') no-repeat center center;
-      background-size: 90%;
+      background: url('../../../images/banner3.png') no-repeat center 40%;
+      background-size: 85%;
       padding-bottom: 15rem;
     }
   }
@@ -50,9 +51,9 @@
       font-size: $font-size-4;
       text-align: center;
       padding-top: 6rem;
-      padding-bottom: 6rem;
-      background: url('../../../images/banner3.png') no-repeat center 45%;
-      background-size: 90%;
+      padding-bottom: 8rem;
+      background: url('../../../images/banner3.png') no-repeat center 40%;
+      background-size: 85%;
       .main {
         font-size: 2.8rem;
         font-weight: $font-weight-bold;
