@@ -4,22 +4,21 @@ import SliderBox from './SliderBox';
 
 const Slider = ({ topic, indexNow, hook }) => {
   const topicArray = topic.split('');
+  const style = {
+    width: `${topic.length * 100}%`,
+    marginLeft: `-${`${indexNow}` * 100}%`,
+  };
   return (
     <div className="slider-wrap">
-      <div
-        className="slider"
-        style={{
-          width: `${topic.length * 100}%`,
-          marginLeft: `-${`${indexNow}` * 100}%`,
-        }}
-      >
+      <div className="slider" style={style}>
         {topicArray.map((word, index) => {
           return (
             <SliderBox
               topic={topic}
-              wordNow={topicArray[index]}
+              wordNow={word}
               pageIndex={index}
               hook={hook}
+              key={word}
             />
           );
         })}

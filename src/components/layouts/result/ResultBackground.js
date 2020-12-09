@@ -1,5 +1,5 @@
 import React from 'react';
-import '@/assets/scss/layouts/ResultBackground.scss';
+import '@/assets/scss/layouts/result/ResultBackground.scss';
 import classNames from 'classnames';
 import ResultBox from '@/components/commons/ResultBox';
 

@@ -5,8 +5,9 @@ import Textarea from '@/components/commons/Textarea';
 import TopicCard from '@/components/elements/ingame/TopicCard';
 
 const SliderBox = ({ topic, wordNow, pageIndex, hook }) => {
+  const style = { width: `${100 / topic.length}%` };
   return (
-    <div className="slider__box" style={{ width: `${100 / topic.length}%` }}>
+    <div className="slider__box" style={style}>
       <TopicCard topic={topic} wordNow={wordNow} pageIndex={pageIndex} />
       <div className="slider__box--text">
         <Textarea placeholder="클릭하여 입력해주세요" hook={hook} />

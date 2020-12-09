@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultBackground from '@/components/layouts/ResultBackground';
+import ResultBackground from '@/components/layouts/result/ResultBackground';
 
 export default {
   title: 'ResultBackground',
@@ -7,11 +7,5 @@ export default {
 };
 
 export const Default = () => {
-  return (
-    <>
-      <div className="flex-colomn">
-        <ResultBackground />;
-      </div>
-    </>
-  );
+  return <ResultBackground />;
 };

@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
-import ingame from './ingame';
 
-const rootReducer = combineReducers({ ingame });
+const rootReducer = combineReducers({});
 
 export default rootReducer;
