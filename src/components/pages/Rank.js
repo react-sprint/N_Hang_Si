@@ -3,17 +3,18 @@ import NHangSiAPI from '@/utils/api';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchList } from '@/modules/rank';
 import { isLoading, isSuccess, isError } from '@/modules/status';
+import useLikes from '@/utils/hooks/useLikes';
 
 import RankBox from '@/components/layouts/rank/RankBox';
 
 const Rank = () => {
   const dispatch = useDispatch();
-  const { ranklist, loading, error, likes } = useSelector(state => ({
+  const { ranklist, loading, error } = useSelector(state => ({
     ranklist: state.rank,
     loading: state.status.loading,
     error: state.status.error,
-    likes: state.likes,
   }));
+  const likes = useLikes();
   const fetching = async () => {
     try {
       dispatch(isLoading());
@@ -23,7 +24,7 @@ const Rank = () => {
         },
       }).then(res => {
         return res.data.map(rank => {
-          return { ...rank, isLike: likes.includes(rank.id) };
+          return { ...rank, isLike: likes.getLikes.includes(rank.id) };
         });
       });
       dispatch(fetchList(response));
@@ -53,6 +54,7 @@ const Rank = () => {
           like={item.like}
           ranking={index + 1}
           isLike={item.isLike}
+          hook={likes}
         />
       ))}
     </div>

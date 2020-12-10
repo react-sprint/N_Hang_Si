@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import NHangSiAPI from '@/utils/api';
 import RankInfo from '@/components/elements/rank/RankInfo';
 import WordBox from '@/components/commons/WordBox';
-import { onLike, offLike } from '@/modules/likes';
 
 const RankBox = ({
   id,
@@ -16,19 +13,17 @@ const RankBox = ({
   like,
   ranking,
   isLike,
+  hook,
 }) => {
   const [likeNum, setLikeNum] = useState(like);
-  const dispatch = useDispatch();
   const checkLike = toggleLike => {
     if (toggleLike) {
-      NHangSiAPI.put(`like/${id}/increase/`);
+      hook.onLike(id);
       setLikeNum(likeNum + 1);
-      dispatch(onLike(id));
     }
     if (!toggleLike) {
-      NHangSiAPI.put(`like/${id}/decrease/`);
+      hook.offLike(id);
       setLikeNum(likeNum - 1);
-      dispatch(offLike(id));
     }
   };
   return (
@@ -62,6 +57,7 @@ RankBox.defaultProps = {
   like: 0,
   ranking: 1,
   isLike: false,
+  hook: () => {},
 };
 
 export default RankBox;
