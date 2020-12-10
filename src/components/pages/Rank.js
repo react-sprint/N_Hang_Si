@@ -8,10 +8,11 @@ import RankBox from '@/components/layouts/rank/RankBox';
 
 const Rank = () => {
   const dispatch = useDispatch();
-  const { ranklist, loading, error } = useSelector(state => ({
+  const { ranklist, loading, error, likes } = useSelector(state => ({
     ranklist: state.rank,
     loading: state.status.loading,
     error: state.status.error,
+    likes: state.likes,
   }));
   const fetching = async () => {
     try {
@@ -20,8 +21,12 @@ const Rank = () => {
         params: {
           page: 0,
         },
+      }).then(res => {
+        return res.data.map(rank => {
+          return { ...rank, isLike: likes.includes(rank.id) };
+        });
       });
-      dispatch(fetchList(response.data));
+      dispatch(fetchList(response));
       dispatch(isSuccess());
     } catch (e) {
       dispatch(isError(e));
@@ -47,6 +52,7 @@ const Rank = () => {
           timeOut={item.time_out}
           like={item.like}
           ranking={index + 1}
+          isLike={item.isLike}
         />
       ))}
     </div>

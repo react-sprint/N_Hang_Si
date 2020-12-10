@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import NHangSiAPI from '@/utils/api';
 import RankInfo from '@/components/elements/rank/RankInfo';
 import WordBox from '@/components/commons/WordBox';
+import { onLike, offLike } from '@/modules/likes';
 
 const RankBox = ({
   id,
@@ -12,18 +15,33 @@ const RankBox = ({
   timeOut,
   like,
   ranking,
+  isLike,
 }) => {
+  const [likeNum, setLikeNum] = useState(like);
+  const dispatch = useDispatch();
+  const checkLike = toggleLike => {
+    if (toggleLike) {
+      NHangSiAPI.put(`like/${id}/increase/`);
+      setLikeNum(likeNum + 1);
+      dispatch(onLike(id));
+    }
+    if (!toggleLike) {
+      NHangSiAPI.put(`like/${id}/decrease/`);
+      setLikeNum(likeNum - 1);
+      dispatch(offLike(id));
+    }
+  };
   return (
     <div className="rankbox">
       <RankInfo
-        id={id}
         nickname={nickname}
         timeOut={timeOut}
         time={time}
         level={level}
-        like={like}
-        isLike={false}
+        like={likeNum}
+        isLike={isLike}
         ranking={ranking}
+        hook={checkLike}
       />
       {word.split('').map((topic, index) => (
         <WordBox key={topic} topic={topic} text={resultText[index]} />
@@ -43,6 +61,7 @@ RankBox.defaultProps = {
   timeOut: 120,
   like: 0,
   ranking: 1,
+  isLike: false,
 };
 
 export default RankBox;
