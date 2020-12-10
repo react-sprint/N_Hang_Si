@@ -34,7 +34,7 @@ const Ingame = ({ topic }) => {
   }, [success]);
 
   return (
-    <div>
+    <div className="ingame">
       <TextWithArrow text={`${topic}(으)로 ${topic.length}행시!`} />
       <Slider topic={topic} indexNow={indexNow} hook={dummyOnChange} />
       {indexNow === topic.length - 1 ? (
