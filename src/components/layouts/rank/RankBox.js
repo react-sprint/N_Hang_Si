@@ -16,7 +16,9 @@ const RankBox = ({
   hook,
 }) => {
   const [likeNum, setLikeNum] = useState(like);
+  const [liked, setLiked] = useState(isLike);
   const checkLike = toggleLike => {
+    setLiked(toggleLike);
     if (toggleLike) {
       hook.onLike(id);
       setLikeNum(likeNum + 1);
@@ -39,7 +41,12 @@ const RankBox = ({
         hook={checkLike}
       />
       {word.split('').map((topic, index) => (
-        <WordBox key={topic} topic={topic} text={resultText[index]} />
+        <WordBox
+          key={topic}
+          topic={topic}
+          text={resultText[index]}
+          color={liked ? 'orange' : ''}
+        />
       ))}
       <hr />
     </div>
