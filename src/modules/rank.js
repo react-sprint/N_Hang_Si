@@ -9,16 +9,22 @@ export const errorState = () => ({ type: ERROR });
 const initialState = {
   page: 0,
   ranklist: [],
+  lastlist: [''],
 };
 
 export default function rank(state = initialState, action) {
   switch (action.type) {
     case INITIALFETCH:
-      return { page: state.page + 1, ranklist: [...action.data] };
+      return {
+        page: state.page + 1,
+        ranklist: [...action.data],
+        lastlist: [...action.data],
+      };
     case FETCH:
       return {
         page: state.page + 1,
         ranklist: [...state.ranklist, ...action.data],
+        lastlist: [...action.data],
       };
     case ERROR:
       return [];
