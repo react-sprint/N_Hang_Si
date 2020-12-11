@@ -1,41 +1,43 @@
 import React, { useEffect } from 'react';
-import NHangSiAPI from '@/utils/api';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchList } from '@/modules/rank';
+import { fetchList, initialFetch } from '@/modules/rank';
 import { isLoading, isSuccess, isError } from '@/modules/status';
+import { useLocation } from 'react-router-dom';
 import useLikes from '@/utils/hooks/useLikes';
+import useFetchApi from '@/utils/hooks/useFetchApi';
 
 import RankBox from '@/components/layouts/rank/RankBox';
 
 const Rank = () => {
   const dispatch = useDispatch();
-  const { ranklist, loading, error } = useSelector(state => ({
-    ranklist: state.rank,
+  const location = useLocation();
+  const likes = useLikes();
+  const fetchApi = useFetchApi(likes);
+  const { page, ranklist, loading, error } = useSelector(state => ({
+    page: state.rank.page,
+    ranklist: state.rank.ranklist,
     loading: state.status.loading,
     error: state.status.error,
   }));
-  const likes = useLikes();
-  const fetching = async () => {
+  const fetch = async () => {
     try {
       dispatch(isLoading());
-      const response = await NHangSiAPI.get('ranklist/', {
-        params: {
-          page: 0,
-        },
-      }).then(res => {
-        return res.data.map(rank => {
-          return { ...rank, isLike: likes.getLikes.includes(rank.id) };
-        });
-      });
-      dispatch(fetchList(response));
+      const res = await fetchApi.callapi(page);
+      if (page === 0) {
+        dispatch(initialFetch(res));
+      } else {
+        dispatch(fetchList(res));
+      }
       dispatch(isSuccess());
     } catch (e) {
       dispatch(isError(e));
     }
   };
   useEffect(() => {
-    fetching();
-  }, []);
+    if (ranklist.length === 0) {
+      fetch();
+    }
+  }, [location]);
 
   if (loading) return <p>loading....</p>;
   if (error) return <p>error</p>;
