@@ -2,7 +2,7 @@ import React from 'react';
 import '@/assets/scss/layouts/ingame/Slider.scss';
 import SliderBox from './SliderBox';
 
-const Slider = ({ topic, indexNow, hook }) => {
+const Slider = ({ topic, indexNow, hook, listPush, ref }) => {
   const topicArray = topic.split('');
   const style = {
     width: `${topic.length * 100}%`,
@@ -19,6 +19,8 @@ const Slider = ({ topic, indexNow, hook }) => {
               pageIndex={index}
               hook={hook}
               key={word}
+              listPush={listPush}
+              ref={null}
             />
           );
         })}
@@ -31,6 +33,7 @@ Slider.defaultProps = {
   topic: '순두부',
   indexNow: 0,
   hook: () => {},
+  ref: null,
 };
 
 export default Slider;
