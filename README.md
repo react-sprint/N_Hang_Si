@@ -63,6 +63,10 @@ SASS_PATH=node_modules:./node_modules;./src/assets/scss/
 
 // Mac 설정
 SASS_PATH=node_modules:src/assets/scss/
+
+// 공통 설정
+REACT_APP_API_HOST=방구석 호랑이 문의
+REACT_APP_API_KEY=방구석 호랑이 문의
 ```
 
 ### node-sass 버전때문에 생기는 이슈(20.11.18)
@@ -79,6 +83,7 @@ npm install node-sass@4.14.1
 
 ```bash
 N_Hang_Si
+├── .env
 ├── README.md
 ├── craco.config.js
 ├── jsconfig.json

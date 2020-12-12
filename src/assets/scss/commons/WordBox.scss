@@ -12,7 +12,7 @@
     &:first-of-type {
       font-size: $font-size-1;
       font-weight: $font-weight-bold;
-      color: $color-orange-1;
+      color: $color-gray-0;
       position: relative;
       text-align: center;
       padding: 1.75rem 0;
@@ -21,6 +21,15 @@
         display: inline-block;
         min-width: 6.8rem;
         background-color: $color-white;
+      }
+      &.orange {
+        color: $color-orange-1;
+      }
+      &.blue {
+        color: $color-success;
+      }
+      &.red {
+        color: $color-fail;
       }
     }
     &:last-of-type {

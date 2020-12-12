@@ -12,12 +12,14 @@ const RankInfo = ({
   like,
   isLike,
   ranking,
+  hook,
 }) => {
   const [isToggle, setIsToggle] = useState(isLike);
   const isRanker = ranking < 10;
   const onClick = e => {
     setIsToggle(!isToggle);
     e.preventDefault();
+    hook(!isToggle);
   };
 
   return (
@@ -72,6 +74,7 @@ RankInfo.defaultProps = {
   level: '지렁이',
   like: 31,
   ranking: 1,
+  hook: () => {},
 };
 
 export default RankInfo;

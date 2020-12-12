@@ -11,9 +11,15 @@ export default {
     text: {
       control: 'text',
     },
+    color: {
+      control: {
+        type: 'select',
+        options: ['default', 'orange', 'blue', 'red'],
+      },
+    },
   },
 };
 
-export const Default = ({ topic, text }) => (
-  <WordBox topic={topic} text={text} />
+export const Default = ({ topic, text, color }) => (
+  <WordBox topic={topic} text={text} color={color} />
 );
