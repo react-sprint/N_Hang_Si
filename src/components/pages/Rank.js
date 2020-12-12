@@ -16,16 +16,16 @@ const Rank = () => {
   const location = useLocation();
   const likes = useLikes();
   const fetchApi = useFetchApi(likes);
-  const { page, ranklist, lastlist } = useSelector(state => ({
+  const { page, rankList, lastList } = useSelector(state => ({
     page: state.rank.page,
-    ranklist: state.rank.ranklist,
-    lastlist: state.rank.lastlist,
+    rankList: state.rank.rankList,
+    lastList: state.rank.lastList,
   }));
   const [isFetch, setIsFetch] = useState(true);
   const fetch = async () => {
     try {
       setIsFetch(false);
-      if (lastlist.length !== 0) {
+      if (lastList.length !== 0) {
         const res = await fetchApi.callapi(page);
         if (page === 0) {
           dispatch(initialFetch(res));
@@ -39,9 +39,7 @@ const Rank = () => {
     }
   };
   const handleScroll = () => {
-    const { scrollHeight } = document.documentElement;
-    const { scrollTop } = document.documentElement;
-    const { clientHeight } = document.documentElement;
+    const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight && isFetch === true) {
       fetch();
     }
@@ -54,22 +52,22 @@ const Rank = () => {
     };
   });
   useEffect(() => {
-    if (ranklist.length === 0) {
-      dispatch(isLoading());
+    dispatch(isLoading());
+    if (rankList.length === 0) {
       fetch();
-      dispatch(isSuccess());
     }
+    dispatch(isSuccess());
   }, [location]);
 
   return (
     <div className="rank">
-      {ranklist.map((item, index) => (
+      {rankList.map((item, index) => (
         <RankBox
           key={item.id}
           id={item.id}
           nickname={item.nickname}
           level={item.level}
-          word={item.word}
+          topic={item.word}
           resultText={item.result_text}
           time={item.time}
           timeOut={item.time_out}
@@ -84,7 +82,7 @@ const Rank = () => {
           <LogoSvg />
         </div>
       )}
-      {lastlist.length === 0 ? (
+      {lastList.length === 0 ? (
         <div className="showstate">
           <p>최신상태입니다</p>
         </div>

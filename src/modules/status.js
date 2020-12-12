@@ -11,7 +11,6 @@ export const isError = e => ({
 
 const initialState = {
   loading: false,
-  error: false,
   errorMessage: null,
 };
 
@@ -20,19 +19,16 @@ export default function statusManagement(state = initialState, action) {
     case ISLOADING:
       return {
         loading: true,
-        error: false,
         errorMessage: null,
       };
     case SUCCESS:
       return {
         loading: false,
-        error: false,
         errorMessage: null,
       };
     case ERROR:
       return {
         loading: false,
-        error: true,
         errorMessage: action.errorMessage,
       };
     default:

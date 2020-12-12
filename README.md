@@ -83,6 +83,7 @@ npm install node-sass@4.14.1
 
 ```bash
 N_Hang_Si
+├── .env
 ├── README.md
 ├── craco.config.js
 ├── jsconfig.json

@@ -6,7 +6,7 @@ const RankBox = ({
   id,
   nickname,
   level,
-  word,
+  topic,
   resultText,
   time,
   timeOut,
@@ -40,10 +40,10 @@ const RankBox = ({
         ranking={ranking}
         hook={checkLike}
       />
-      {word.split('').map((topic, index) => (
+      {topic.split('').map((word, index) => (
         <WordBox
-          key={topic}
-          topic={topic}
+          key={word}
+          topic={word}
           text={resultText[index]}
           color={liked ? 'orange' : ''}
         />
@@ -57,7 +57,7 @@ RankBox.defaultProps = {
   id: 0,
   nickname: '팔공산',
   level: '지렁이',
-  word: '대구',
+  topic: '대구',
   resultText: ['대짜 돼요?', '구이도 돼요?'],
   time: 50,
   timeOut: 120,

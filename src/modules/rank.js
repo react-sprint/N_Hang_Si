@@ -8,8 +8,8 @@ export const errorState = () => ({ type: ERROR });
 
 const initialState = {
   page: 0,
-  ranklist: [],
-  lastlist: [''],
+  rankList: [],
+  lastList: [''],
 };
 
 export default function rank(state = initialState, action) {
@@ -17,14 +17,14 @@ export default function rank(state = initialState, action) {
     case INITIALFETCH:
       return {
         page: state.page + 1,
-        ranklist: [...action.data],
-        lastlist: [...action.data],
+        rankList: [...action.data],
+        lastList: [...action.data],
       };
     case FETCH:
       return {
         page: state.page + 1,
-        ranklist: [...state.ranklist, ...action.data],
-        lastlist: [...action.data],
+        rankList: [...state.rankList, ...action.data],
+        lastList: [...action.data],
       };
     case ERROR:
       return [];
