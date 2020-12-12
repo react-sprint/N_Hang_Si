@@ -1,12 +1,12 @@
 import React from 'react';
-import ArrowSvg from '@/assets/images/svg/ArrowSvg';
+import ArrowSvg from '@/assets/images/svg/ArrowSvg.svg';
 
 import '@/assets/scss/commons/TextWithArrow.scss';
 
 const TextWithArrow = ({ text }) => {
   return (
     <div className="textwitharrow">
-      <ArrowSvg />
+      <img src={ArrowSvg} alt="화살표" />
       <p>{text}</p>
     </div>
   );
