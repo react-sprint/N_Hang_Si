@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import '@/assets/scss/pages/Ingame.scss';
 import { useHistory } from 'react-router-dom';
 import Slider from '@/components/layouts/ingame/Slider';
@@ -32,7 +32,6 @@ const Ingame = ({ topic }) => {
     }
     if (topic.charAt(indexNow) !== dummy.charAt(0)) {
       alert('n행시 규칙에 맞게 입력해주세요');
-      console.log(topic.charAt(indexNow), dummy.charAt(0));
       return;
     }
     setIndexNow(indexNow + 1);
@@ -41,6 +40,14 @@ const Ingame = ({ topic }) => {
   };
 
   const submitPush = () => {
+    if (!dummy) {
+      alert('내용을 입력해주세요');
+      return;
+    }
+    if (topic.charAt(indexNow) !== dummy.charAt(0)) {
+      alert('n행시 규칙에 맞게 입력해주세요');
+      return;
+    }
     listPush();
     setSucceess(true);
   };
@@ -59,7 +66,7 @@ const Ingame = ({ topic }) => {
         indexNow={indexNow}
         hook={dummyOnChange}
         listPush={listPush}
-        ref={null}
+        submitPush={submitPush}
       />
       {indexNow === topic.length - 1 ? (
         <Button contents="제출하기" color="orange" hook={submitPush} />
@@ -71,6 +78,6 @@ const Ingame = ({ topic }) => {
 };
 
 Ingame.defaultProps = {
-  topic: '순두부찌개',
+  topic: '순두부',
 };
 export default Ingame;
