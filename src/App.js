@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import Navbar from '@/components/pages/Navbar';
 import Home from '@/components/pages/Home';
+import GameSetting from '@/components/pages/GameSetting';
 import GamePrepare from '@/components/pages/GamePrepare';
 import Ingame from '@/components/pages/Ingame';
 import Result from '@/components/pages/Result';
@@ -20,6 +21,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/gameprepare" exact component={GamePrepare} />
+          <Route path="/gamesetting" exact component={GameSetting} />
           <Route path="/ingame" exact component={Ingame} />
           <Route path="/result/:resultState" exact component={Result} />
           <Route path="/rank" exact component={Rank} />
