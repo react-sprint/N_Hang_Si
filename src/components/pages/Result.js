@@ -38,15 +38,19 @@ const Result = ({ location }) => {
       history.push('/rank');
     };
     return (
-      <>
-        <TextWithArrow text={`${nickname}님의 결과!`} />
+      <div className="result">
+        <div className="result--title">
+          <TextWithArrow text={`${nickname}님의 기록!`} />
+        </div>
         <ResultBackground
           success
           topic={topic}
           useTime={useTime}
           level={level}
-          nickname={nickname}
         />
+        <div className="result--title">
+          <TextWithArrow text={`${nickname}결과`} />
+        </div>
         {topic.split('').map((word, index) => {
           return (
             <WordBox key={word} topic={word} text={list[index]} color="blue" />
@@ -61,7 +65,7 @@ const Result = ({ location }) => {
           />
           <Button contents="등록하기" color="orange" hook={submitResult} />
         </div>
-      </>
+      </div>
     );
   }
 
