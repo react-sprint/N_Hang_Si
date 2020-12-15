@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BarTimer from '@/components/elements/nav/BarTimer';
 import TextTimer from '@/components/elements/nav/TextTimer';
-import useInterval from '@/utils/hooks/useInterval';
 
 export default {
   title: 'Timer',
@@ -16,32 +15,34 @@ export default {
 };
 
 export const Default = ({ time, start }) => {
+  const timeOut = time || 40;
   const [timer, setTimer] = useState(0);
-  const timeOut = time;
   const [isRunning, setIsRunning] = useState(false);
-  const [change, setChange] = useState(true);
-  useInterval(
-    () => {
-      setTimer(timer + 1);
-      if (timer === timeOut - 1) {
-        setIsRunning(false);
-      }
-    },
-    isRunning ? 1000 : null,
-  );
   useEffect(() => {
-    if (change) {
-      if (start) {
+    if (start) {
+      if (timer < timeOut) {
         setIsRunning(true);
-        setChange(true);
       }
     }
   }, start);
-
+  useEffect(() => {
+    if (isRunning) {
+      const countdown = setInterval(() => {
+        setTimer(timer + 1);
+      }, 1000);
+      return () => {
+        clearInterval(countdown);
+        if (timer > timeOut - 2) {
+          setIsRunning(false);
+        }
+      };
+    }
+    return false;
+  }, [timer, isRunning]);
   return (
     <div className="flex-culomn">
-      <TextTimer time={timer} timeout={timeOut} />
-      <BarTimer time={timer} timeout={timeOut} isActive={isRunning} />
+      <TextTimer time={timeOut - timer} timeout={timeOut} />
+      <BarTimer timeout={timeOut} isActive={isRunning} />
     </div>
   );
 };

@@ -2,23 +2,25 @@ import React, { useEffect, useState } from 'react';
 
 import '@/assets/scss/elements/nav/BarTimer.scss';
 
-const BarTimer = ({ time, timeout, isActive }) => {
-  const [timerStyle, setTimerStyle] = useState({});
+const BarTimer = ({ timer, timeout, isActive }) => {
+  const [timerStyle, setTimerStyle] = useState({ transitionDuration: `1s` });
   useEffect(() => {
     if (isActive) {
-      setTimerStyle({
-        transitionDuration: `${timeout}s`,
-        width: `100%`,
-      });
+      const progress = ((timeout - timer) / timeout) * 100;
+      if (progress === 80) {
+        setTimerStyle({
+          ...timerStyle,
+          backgroundColor: '#ff5050',
+          width: `${progress}%`,
+        });
+      } else {
+        setTimerStyle({
+          ...timerStyle,
+          width: `${progress}%`,
+        });
+      }
     }
-    if (time / timeout > 0.7) {
-      setTimerStyle({
-        ...timerStyle,
-        transitionDuration: `${timeout * 0.05}s`,
-        backgroundColor: '#FF5050',
-      });
-    }
-  }, [time, timeout]);
+  }, [timer, isActive]);
 
   return (
     <div className="bartimer">
@@ -28,7 +30,7 @@ const BarTimer = ({ time, timeout, isActive }) => {
 };
 
 BarTimer.defaultProps = {
-  time: 0,
+  timer: 100,
   timeout: 100,
   isActive: true,
 };
