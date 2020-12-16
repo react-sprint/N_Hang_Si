@@ -2,37 +2,45 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nextstep } from '@/modules/game';
 import classNames from 'classnames';
-import '@/assets/scss/commons/Button.scss';
-import '@/assets/scss/layouts/gameprepare/Gameprepare.scss';
+import '@/assets/scss/pages/GamePrepare.scss';
 
+import LevelBoxTop from '@/components/layouts/gameprepare/LevelBoxTop';
 import LevelBox from '@/components/layouts/gameprepare/LevelBox';
 import TopicLengthBox from '@/components/layouts/gameprepare/TopicLengthBox';
 import NicknameInputBox from '@/components/layouts/gameprepare/NicknameInputBox';
 import Button from '@/components/commons/Button';
-import LevelBoxTop from '../elements/gameprepare/LevelBoxTop';
 
 const GamePrepare = () => {
-  // const [level,setLevel] = useState(0);
-
   const dispatch = useDispatch();
-  const nickname = '아무거나';
-  const level = '지렁이';
-  const topicLength = 1;
+  const [level, setLevel] = useState('일반인');
+  const [topicLength, setTopicLength] = useState('3');
+  const [nickname, setNickname] = useState('');
 
   const handleModal = () => {
-    dispatch(nextstep(nickname, level, topicLength)); // subscribe
+    if (!level || !topicLength || !nickname) {
+      return alert('모든 설정을 완료해주세요');
+    }
+    return dispatch(nextstep(nickname, level, topicLength));
   };
 
-  const active = () => {
-    // console.log('abdc');
+  const ChoiceLevel = value => {
+    setLevel(value);
+  };
+
+  const ChoiceTopicLength = value => {
+    setTopicLength(value);
+  };
+
+  const ChangeNicknameInput = value => {
+    setNickname(value);
   };
 
   return (
     <div className="gameprepare">
       <LevelBoxTop />
-      <LevelBox onClick={active} />
-      <TopicLengthBox />
-      <NicknameInputBox />
+      <LevelBox hook={ChoiceLevel} />
+      <TopicLengthBox hook={ChoiceTopicLength} />
+      <NicknameInputBox hook={ChangeNicknameInput} />
       <div
         className={classNames(
           'button--bottom',
