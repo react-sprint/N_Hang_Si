@@ -20,7 +20,7 @@ const GameSetting = () => {
     document.addEventListener('animationend', () => {
       history.push('/ingame', { topic });
     });
-  }, []);
+  }, [topic]);
   return (
     <div className="gamesetting">
       <RoundTimer time={timeOut} />
