@@ -1,40 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
-import useToggle from '@/utils/hooks/useToggle';
 
 import '@/assets/scss/commons/Button.scss';
 
 const TOGGLE = 'toggle';
 
-const Button = ({ contents, shape, color, toggle, type, hook }) => {
-  const [isToggle, onToggle] = useToggle(toggle);
-  const onClick = () => {
-    onToggle();
-    hook();
+const Button = ({ contents, shape, color, active, type, hook, value }) => {
+  const [isActive, setIsActive] = useState(active);
+  const onToggle = e => {
+    setIsActive(!isActive);
+    hook(e.target.value, !isActive);
   };
-  if (type === TOGGLE) {
-    return (
-      <button
-        onClick={onClick}
-        className={classNames('button', shape, color, isToggle ? 'active' : '')}
-      >
-        {contents}
-      </button>
-    );
+  const onClick = e => {
+    hook(e.target.value);
+  };
+  switch (type) {
+    case TOGGLE:
+      return (
+        <button
+          onClick={onToggle}
+          className={classNames(
+            'button',
+            shape,
+            color,
+            isActive ? 'active' : '',
+          )}
+          value={value}
+        >
+          {contents}
+        </button>
+      );
+    default:
+      return (
+        <button
+          onClick={onClick}
+          className={classNames('button', shape, color, active ? 'active' : '')}
+          value={value}
+        >
+          {contents}
+        </button>
+      );
   }
-  return (
-    <button onClick={onClick} className={classNames('button', shape, color)}>
-      {contents}
-    </button>
-  );
 };
 
 Button.defaultProps = {
   contents: 'empty',
   shape: 'default',
   color: 'white',
-  toggle: false,
+  active: false,
   type: 'button',
+  value: '',
   hook: () => {},
 };
 
