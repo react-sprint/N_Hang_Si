@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '@/assets/scss/pages/Ingame.scss';
 import { useHistory, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import Slider from '@/components/layouts/ingame/Slider';
 import Button from '@/components/commons/Button';
 import TextWithArrow from '@/components/commons/TextWithArrow';
@@ -15,18 +14,9 @@ const Ingame = () => {
   const [list, setList] = useState([]);
   const [success, setSucceess] = useState(false);
 
-  const { nickname, level, time } = useSelector(state => ({
-    nickname: state.game.timeout,
-    level: state.game.level,
-    time: state.game.time,
-  }));
-
   const matchData = {
     list,
     topic,
-    useTime: time,
-    level,
-    nickname,
     success,
   };
 
