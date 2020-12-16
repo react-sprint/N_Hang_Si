@@ -11,7 +11,10 @@ const initialState = {
   nickname: null,
   level: null,
   topicLength: null,
+  timeout: null,
 };
+
+const levelValue = { 지렁이: 60, 일반인: 40, 박명수: 20 };
 
 export default function game(state = initialState, action) {
   switch (action.type) {
@@ -21,6 +24,7 @@ export default function game(state = initialState, action) {
         nickname: action.nickname,
         level: action.level,
         topicLength: action.topicLength,
+        timeout: Number(action.topicLength) * levelValue[action.level],
       };
     default:
       return state;
