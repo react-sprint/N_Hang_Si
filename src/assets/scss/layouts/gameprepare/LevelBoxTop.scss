@@ -1,0 +1,24 @@
+.level--box__top {
+}
+
+.img {
+  &--container {
+    position: relative;
+    height: 18.4rem;
+  }
+  &--box {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    &.active {
+      opacity: 1;
+    }
+
+    img {
+      display: inline-block;
+      height: 100%;
+    }
+  }
+}

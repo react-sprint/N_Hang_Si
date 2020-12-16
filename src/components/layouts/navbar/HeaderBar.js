@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { timeRecord } from '@/modules/game';
 import LogoSvg from '@/assets/images/svg/LogoSvg';
 import Hamburger from '@/components/elements/nav/Hamburger';
 import TextTimer from '@/components/elements/nav/TextTimer';
@@ -8,9 +10,10 @@ import BarTimer from '@/components/elements/nav/BarTimer';
 import '@/assets/scss/layouts/navbar/HeaderBar.scss';
 
 const HeaderBar = ({ navbarRef, hook }) => {
-  const timeOut = 10; // 나중에 리덕스에서 가져와야 하는 부분
   const location = useLocation();
   const history = useHistory();
+  const dispatch = useDispatch();
+  const { timeOut } = useSelector(state => ({ timeOut: state.game.timeout }));
   const [timer, setTimer] = useState(timeOut);
   const [isIngame, setIsIngame] = useState(false);
 
@@ -23,7 +26,7 @@ const HeaderBar = ({ navbarRef, hook }) => {
         clearInterval(countdown);
         if (timer < 1) {
           setIsIngame(false);
-          history.push('/result/fail', { success: false });
+          history.push('/result', { success: false });
         }
       };
     }
@@ -33,11 +36,11 @@ const HeaderBar = ({ navbarRef, hook }) => {
   useEffect(() => {
     switch (location.pathname) {
       case '/ingame':
-        setTimer(10);
+        setTimer(timeOut);
         setIsIngame(true);
         break;
-      case '/result/success':
-        // dispatch 해야하는 부분
+      case '/result':
+        dispatch(timeRecord(timer));
         setIsIngame(false);
         break;
       default:

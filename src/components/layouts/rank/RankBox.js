@@ -42,7 +42,7 @@ const RankBox = ({
       />
       {topic.split('').map((word, index) => (
         <WordBox
-          key={word}
+          key={word + String(index)}
           topic={word}
           text={resultText[index]}
           color={liked ? 'orange' : ''}
