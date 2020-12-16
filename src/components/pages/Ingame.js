@@ -1,28 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import '@/assets/scss/pages/Ingame.scss';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Slider from '@/components/layouts/ingame/Slider';
 import Button from '@/components/commons/Button';
 import TextWithArrow from '@/components/commons/TextWithArrow';
 
-const Ingame = ({ topic }) => {
+const Ingame = () => {
   const history = useHistory();
+  const location = useLocation();
+  const { topic } = location.state;
   const [indexNow, setIndexNow] = useState(0);
   const [dummy, setDummy] = useState('');
   const [list, setList] = useState([]);
   const [success, setSucceess] = useState(false);
 
-  // topic이 없으면 리다이렉트
-  // if (topic === 'test') {
-  //   history.push('/');
-  // }
+  const { nickname, level, time } = useSelector(state => ({
+    nickname: state.game.timeout,
+    level: state.game.level,
+    time: state.game.time,
+  }));
 
   const matchData = {
     list,
     topic,
-    useTime: 30,
-    level: '지렁이',
-    nickname: '뱅구석호랭쓰',
+    useTime: time,
+    level,
+    nickname,
     success,
   };
 
@@ -82,7 +86,4 @@ const Ingame = ({ topic }) => {
   );
 };
 
-Ingame.defaultProps = {
-  topic: '이이제이',
-};
 export default Ingame;

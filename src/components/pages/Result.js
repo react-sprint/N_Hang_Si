@@ -7,24 +7,28 @@ import '@/assets/scss/pages/Result.scss';
 import NHangSiAPI from '@/utils/api';
 import levelCode from '@/utils/function/levelCode';
 import { useHistory, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Result = () => {
   const history = useHistory();
   const location = useLocation();
   const { success } = location.state;
-  const { list, topic, useTime, level, nickname } = location.state;
+  const { list, topic } = location.state;
 
-  // success가 없으면 리다이렉트
+  const { nickname, level, time } = useSelector(state => ({
+    nickname: state.game.timeout,
+    level: state.game.level,
+    time: state.game.time,
+  }));
 
   if (success === true) {
-    // const { list, topic, useTime, level, nickname } = location.state[0];
     const submitResult = async () => {
       await NHangSiAPI.post('register/', {
         nickname,
         level: levelCode(level),
         word: topic,
         list_text: list,
-        time: useTime,
+        time,
         time_out: 60,
       });
       history.push('/rank');
@@ -34,12 +38,7 @@ const Result = () => {
         <div className="result--title">
           <TextWithArrow text={`${nickname}님의 기록!`} />
         </div>
-        <ResultBackground
-          success
-          topic={topic}
-          useTime={useTime}
-          level={level}
-        />
+        <ResultBackground success topic={topic} useTime={time} level={level} />
         <div className="result--title">
           <TextWithArrow text={`${nickname}결과`} />
         </div>
