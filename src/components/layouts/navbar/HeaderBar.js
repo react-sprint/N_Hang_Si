@@ -23,7 +23,7 @@ const HeaderBar = ({ navbarRef, hook }) => {
         clearInterval(countdown);
         if (timer < 1) {
           setIsIngame(false);
-          history.push('/result/fail', { success: false });
+          history.push('/result', { success: false });
         }
       };
     }
@@ -31,12 +31,13 @@ const HeaderBar = ({ navbarRef, hook }) => {
   }, [timer, isIngame]);
 
   useEffect(() => {
+    console.log(location);
     switch (location.pathname) {
       case '/ingame':
         setTimer(10);
         setIsIngame(true);
         break;
-      case '/result/success':
+      case '/result':
         // dispatch 해야하는 부분
         setIsIngame(false);
         break;

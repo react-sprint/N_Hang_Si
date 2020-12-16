@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { isLoading, isSuccess } from '@/modules/status';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import TopicList from '@/utils/data/topic.json';
@@ -12,22 +10,13 @@ import '@/assets/scss/pages/GameSetting.scss';
 const GameSetting = () => {
   const topicLength = 4;
   const history = useHistory();
-  const dispatch = useDispatch();
-  const [topic, setTopic] = useState('');
-  const makeTopic = () => {
-    const dummy = TopicList[`length${topicLength}`];
-    setTopic(dummy[Math.floor(Math.random() * dummy.length)]);
-  };
+  const topicList = TopicList[`length${topicLength}`];
+  const topic = topicList[Math.floor(Math.random() * topicList.length)];
   useEffect(() => {
     document.addEventListener('animationend', () => {
       history.push('/ingame', { topic });
     });
   }, []);
-  useEffect(() => {
-    dispatch(isLoading());
-    makeTopic();
-    dispatch(isSuccess());
-  }, [history]);
   return (
     <div className="gamesetting">
       <RoundTimer />
