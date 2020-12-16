@@ -16,7 +16,7 @@ const ResultBackground = ({ success, topic, useTime, level }) => {
           <h2 className="result-bar--title">SUCCESS</h2>
           <div className="result-bar--desc">
             <ResultBox color="white" title="주제어" text={topic} />
-            <ResultBox color="black" title="소요시간" text={useTime} />
+            <ResultBox color="black" title="소요시간" text={`${useTime}s`} />
             <ResultBox color="gray" title="난이도" text={level} />
           </div>
           <div className="result-bar--background" />
