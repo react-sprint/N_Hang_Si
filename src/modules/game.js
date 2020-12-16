@@ -33,7 +33,7 @@ export default function game(state = initialState, action) {
     case TIMERECORD:
       return {
         ...state,
-        time: action.time,
+        time: state.timeout - action.time,
       };
     default:
       return state;
