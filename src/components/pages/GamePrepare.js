@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { nextstep } from '@/modules/game';
 import classNames from 'classnames';
@@ -12,6 +13,7 @@ import '@/assets/scss/pages/GamePrepare.scss';
 
 const GamePrepare = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [level, setLevel] = useState('일반인');
   const [topicLength, setTopicLength] = useState('3');
   const [nickname, setNickname] = useState('');
@@ -44,7 +46,8 @@ const GamePrepare = () => {
     if (!level || !topicLength || !nickname) {
       return alert('모든 설정을 완료해주세요');
     }
-    return dispatch(nextstep(nickname, level, topicLength));
+    dispatch(nextstep(nickname, level, topicLength));
+    return history.push('/gamesetting');
   };
 
   return (
