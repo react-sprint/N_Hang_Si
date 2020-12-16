@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/gameprepare" exact component={GamePrepare} />
           <Route path="/ingame" exact component={Ingame} />
-          <Route path="/result/:resultState" exact component={Result} />
+          <Route path="/result" exact component={Result} />
           <Route path="/rank" exact component={Rank} />
           <Redirect path="*" to="/" />
         </Switch>

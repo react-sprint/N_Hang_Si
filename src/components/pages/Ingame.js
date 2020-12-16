@@ -54,7 +54,7 @@ const Ingame = ({ topic }) => {
 
   useEffect(() => {
     if (success === true) {
-      history.push('/result/success', [matchData]);
+      history.push('/result', matchData);
     }
   }, [success]);
 
