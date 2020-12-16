@@ -26,9 +26,18 @@ export default {
         options: ['defualt', 'toggle'],
       },
     },
+    active: {
+      control: 'boolean',
+    },
   },
 };
 
-export const Default = ({ contents, shape, color, type }) => (
-  <Button contents={contents} shape={shape} color={color} type={type} />
+export const Default = ({ contents, shape, color, type, active }) => (
+  <Button
+    contents={contents}
+    shape={shape}
+    color={color}
+    type={type}
+    active={active}
+  />
 );

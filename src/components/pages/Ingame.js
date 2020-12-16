@@ -83,6 +83,6 @@ const Ingame = ({ topic }) => {
 };
 
 Ingame.defaultProps = {
-  topic: 'test',
+  topic: '이이제이',
 };
 export default Ingame;

@@ -1,17 +1,13 @@
-import React from 'react';
-
-import useInput from '@/utils/hooks/useInput';
+import React, { useState } from 'react';
 
 import '@/assets/scss/commons/Input.scss';
 
-/* 
-Input
-  data
-  placeholder
-*/
-
-const Input = ({ data, placeholder }) => {
-  const { value, onChange } = useInput(data);
+const Input = ({ data, placeholder, hook }) => {
+  const [value, setValue] = useState(data);
+  const onChange = e => {
+    setValue(e.target.value);
+    hook(e.target.value);
+  };
   return (
     <input
       value={value}
@@ -26,6 +22,7 @@ const Input = ({ data, placeholder }) => {
 Input.defaultProps = {
   data: '',
   placeholder: '입력해주세요',
+  hook: () => {},
 };
 
 export default Input;

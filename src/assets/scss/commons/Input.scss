@@ -1,6 +1,7 @@
 @import 'utils/variables.scss';
 
 .input {
+  background-color: $color-white;
   &:hover {
     border-color: $color-orange-1;
   }

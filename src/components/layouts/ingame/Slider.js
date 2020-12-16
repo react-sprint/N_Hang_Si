@@ -18,7 +18,7 @@ const Slider = ({ topic, indexNow, hook, listPush, submitPush }) => {
               wordNow={word}
               pageIndex={index}
               hook={hook}
-              key={word}
+              key={word + String(index)}
               listPush={listPush}
               submitPush={submitPush}
               indexNow={indexNow}
