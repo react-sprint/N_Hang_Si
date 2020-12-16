@@ -5,31 +5,23 @@ import WordBox from '@/components/commons/WordBox';
 import Button from '@/components/commons/Button';
 import '@/assets/scss/pages/Result.scss';
 import NHangSiAPI from '@/utils/api';
-import { useHistory } from 'react-router-dom';
+import levelCode from '@/utils/function/levelCode';
+import { useHistory, useLocation } from 'react-router-dom';
 
-const Result = ({ location }) => {
+const Result = () => {
   const history = useHistory();
-  const { success } = location.state[0];
-  const { list, topic, useTime, level, nickname } = location.state[0];
+  const location = useLocation();
+  const { success } = location.state;
+  const { list, topic, useTime, level, nickname } = location.state;
+
+  // success가 없으면 리다이렉트
 
   if (success === true) {
     // const { list, topic, useTime, level, nickname } = location.state[0];
     const submitResult = async () => {
-      const levelCode = () => {
-        if (level === '지렁이') {
-          return 'E';
-        }
-        if (level === '일반인') {
-          return 'N';
-        }
-        if (level === '박명수') {
-          return 'H';
-        }
-        return null;
-      };
       await NHangSiAPI.post('register/', {
         nickname,
-        level: levelCode(),
+        level: levelCode(level),
         word: topic,
         list_text: list,
         time: useTime,

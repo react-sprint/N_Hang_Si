@@ -12,6 +12,11 @@ const Ingame = ({ topic }) => {
   const [list, setList] = useState([]);
   const [success, setSucceess] = useState(false);
 
+  // topic이 없으면 리다이렉트
+  // if (topic === 'test') {
+  //   history.push('/');
+  // }
+
   const matchData = {
     list,
     topic,
@@ -78,6 +83,6 @@ const Ingame = ({ topic }) => {
 };
 
 Ingame.defaultProps = {
-  topic: '순두부',
+  topic: 'test',
 };
 export default Ingame;
