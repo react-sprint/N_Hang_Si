@@ -37,7 +37,7 @@ const GamePrepare = () => {
 
   return (
     <div className="gameprepare">
-      <LevelBoxTop />
+      <LevelBoxTop select={level} />
       <LevelBox hook={ChoiceLevel} />
       <TopicLengthBox hook={ChoiceTopicLength} />
       <NicknameInputBox hook={ChangeNicknameInput} />

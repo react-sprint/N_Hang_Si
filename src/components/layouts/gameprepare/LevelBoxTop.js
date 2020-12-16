@@ -1,27 +1,41 @@
 import React from 'react';
 import classNames from 'classnames';
+
+import Easy from '@/assets/images/easy.png';
+import Normal from '@/assets/images/normal.png';
+import Hard from '@/assets/images/hard.png';
+
 import '@/assets/scss/layouts/gameprepare/LevelBoxTop.scss';
 
-const LevelBoxTop = () => {
-  const img1 = 'https://place-hold.it/300x300/eee';
-  const img2 = 'https://place-hold.it/300x300/ccc';
-  const img3 = 'https://place-hold.it/300x300/000';
+const EASY = '지렁이';
+const NORMAL = '일반인';
+const HARD = '박명수';
 
+const LevelBoxTop = ({ select }) => {
   return (
     <div className="level--box__top">
       <div className="img--container">
-        <div className={classNames('img--box', 'active')}>
-          <img src={img1} alt="임시이미지" />
+        <div
+          className={classNames('img--box', select === EASY ? 'active' : '')}
+        >
+          <img src={Easy} alt="지렁이" />
         </div>
-        <div className={classNames('img--box')}>
-          <img src={img2} alt="임시이미지" />
+        <div
+          className={classNames('img--box', select === NORMAL ? 'active' : '')}
+        >
+          <img src={Normal} alt="일반인" />
         </div>
-        <div className={classNames('img--box')}>
-          <img src={img3} alt="임시이미지" />
+        <div
+          className={classNames('img--box', select === HARD ? 'active' : '')}
+        >
+          <img src={Hard} alt="박명수" />
         </div>
       </div>
     </div>
   );
 };
 
+LevelBoxTop.defaultProps = {
+  select: '박명수',
+};
 export default LevelBoxTop;
