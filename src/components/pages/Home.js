@@ -7,7 +7,7 @@ import bannerImage from '@/assets/images/banner.png';
 const Home = () => {
   const history = useHistory();
   const reDirect = () => {
-    history.push('/gameprepare');
+    history.push('/prepare');
   };
   return (
     <div className="home">
@@ -16,7 +16,7 @@ const Home = () => {
       </div>
       <div className="home--button">
         <Button contents="시작하기" color="orange" hook={reDirect} />
-        <Link to="/rule">게임 방법</Link>
+        <Link to="/">게임 방법</Link>
       </div>
     </div>
   );

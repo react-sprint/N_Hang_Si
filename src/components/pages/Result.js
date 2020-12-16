@@ -51,7 +51,7 @@ const Result = () => {
           <Button
             contents="다시하기"
             hook={() => {
-              history.push('/');
+              history.push('/prepare');
             }}
           />
           <Button contents="등록하기" color="orange" hook={submitResult} />

@@ -4,14 +4,14 @@ import { useDispatch } from 'react-redux';
 import { nextstep } from '@/modules/game';
 import classNames from 'classnames';
 
-import LevelBoxTop from '@/components/layouts/gameprepare/LevelBoxTop';
-import RadioButtonBox from '@/components/layouts/gameprepare/RadioButtonBox';
-import NicknameInputBox from '@/components/layouts/gameprepare/NicknameInputBox';
+import LevelBoxTop from '@/components/layouts/prepare/LevelBoxTop';
+import RadioButtonBox from '@/components/layouts/prepare/RadioButtonBox';
+import NicknameInputBox from '@/components/layouts/prepare/NicknameInputBox';
 import Button from '@/components/commons/Button';
 
-import '@/assets/scss/pages/GamePrepare.scss';
+import '@/assets/scss/pages/Prepare.scss';
 
-const GamePrepare = () => {
+const Prepare = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [level, setLevel] = useState('일반인');
@@ -47,11 +47,11 @@ const GamePrepare = () => {
       return alert('모든 설정을 완료해주세요');
     }
     dispatch(nextstep(nickname, level, topicLength));
-    return history.push('/gamesetting');
+    return history.push('/setting');
   };
 
   return (
-    <div className="gameprepare">
+    <div className="prepare">
       <LevelBoxTop select={level} />
       <RadioButtonBox
         hook={levelObject.Choice}
@@ -80,4 +80,4 @@ const GamePrepare = () => {
   );
 };
 
-export default GamePrepare;
+export default Prepare;
