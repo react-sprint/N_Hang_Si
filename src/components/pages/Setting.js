@@ -6,9 +6,9 @@ import TopicList from '@/utils/data/topic.json';
 
 import RoundTimer from '@/components/elements/ingame/RoundTimer';
 
-import '@/assets/scss/pages/GameSetting.scss';
+import '@/assets/scss/pages/Setting.scss';
 
-const GameSetting = () => {
+const Setting = () => {
   const { timeOut, topicLength } = useSelector(state => ({
     timeOut: state.game.timeout,
     topicLength: state.game.topicLength,
@@ -20,9 +20,9 @@ const GameSetting = () => {
     document.addEventListener('animationend', () => {
       history.push('/ingame', { topic });
     });
-  }, []);
+  }, [topic]);
   return (
-    <div className="gamesetting">
+    <div className="setting">
       <RoundTimer time={timeOut} />
       <div className="text__container">
         <p className="text__container--title">주제어</p>
@@ -32,4 +32,4 @@ const GameSetting = () => {
   );
 };
 
-export default GameSetting;
+export default Setting;

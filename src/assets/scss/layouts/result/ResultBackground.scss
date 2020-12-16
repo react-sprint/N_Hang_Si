@@ -16,8 +16,6 @@
     text-indent: 1em;
   }
   &--desc {
-    position: relative;
-    top: 7rem;
     display: flex;
     justify-content: center;
   }
@@ -30,14 +28,20 @@
       background: $color-success;
     }
     &--desc {
-      background: url('../../../images/banner3.png') no-repeat center 40%;
-      background-size: 85%;
+      position: relative;
+      top: 7.3rem;
+    }
+
+    &--background {
+      background: url('../../../images/banner3.png') no-repeat center center;
+      background-size: cover;
       padding-bottom: 15rem;
     }
   }
 }
 
 .failed {
+  padding-bottom: 15rem;
   .result-bar {
     &--title {
       color: $color-white;
@@ -50,16 +54,22 @@
       align-self: center;
       font-size: $font-size-4;
       text-align: center;
-      padding-top: 6rem;
-      padding-bottom: 8rem;
-      background: url('../../../images/banner3.png') no-repeat center 40%;
-      background-size: 85%;
+      padding-top: 10rem;
       .main {
         font-size: 2.8rem;
         font-weight: $font-weight-bold;
         color: $color-fail;
         margin-bottom: 1rem;
       }
+    }
+    &--background {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 10rem;
+      background: url('../../../images/banner3.png') no-repeat center center;
+      background-size: cover;
+      padding-bottom: 15rem;
     }
   }
 }

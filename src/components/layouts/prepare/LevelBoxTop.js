@@ -5,7 +5,7 @@ import Easy from '@/assets/images/easy.png';
 import Normal from '@/assets/images/normal.png';
 import Hard from '@/assets/images/hard.png';
 
-import '@/assets/scss/layouts/gameprepare/LevelBoxTop.scss';
+import '@/assets/scss/layouts/prepare/LevelBoxTop.scss';
 
 const EASY = '지렁이';
 const NORMAL = '일반인';

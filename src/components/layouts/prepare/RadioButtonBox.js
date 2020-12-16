@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TextWithArrow from '@/components/commons/TextWithArrow';
 import Button from '@/components/commons/Button';
-import '@/assets/scss/layouts/gameprepare/RadioButtonBox.scss';
+import '@/assets/scss/layouts/prepare/RadioButtonBox.scss';
 
 const RadioButtonBox = ({ dataList, hook, defaultValue, title }) => {
   const [select, setSelect] = useState(defaultValue);

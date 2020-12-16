@@ -1,7 +1,7 @@
 import React from 'react';
 import TextWithArrow from '@/components/commons/TextWithArrow';
 import Input from '@/components/commons/Input';
-import '@/assets/scss/layouts/gameprepare/NicknameInputBox.scss';
+import '@/assets/scss/layouts/prepare/NicknameInputBox.scss';
 
 const NickNameInputBox = ({ hook, title, placeholder }) => {
   return (
