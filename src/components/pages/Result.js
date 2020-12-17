@@ -16,7 +16,7 @@ const Result = () => {
   const { list, topic } = location.state;
 
   const { nickname, level, time } = useSelector(state => ({
-    nickname: state.game.timeout,
+    nickname: state.game.nickname,
     level: state.game.level,
     time: state.game.time,
   }));
@@ -31,7 +31,7 @@ const Result = () => {
         time,
         time_out: 60,
       });
-      history.push('/rank');
+      history.push('/rank', { newItem: true });
     };
     return (
       <div className="result">
