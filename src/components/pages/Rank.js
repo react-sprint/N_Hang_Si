@@ -22,12 +22,12 @@ const Rank = () => {
     lastList: state.rank.lastList,
   }));
   const [isFetch, setIsFetch] = useState(true);
-  const fetch = async () => {
+  const fetch = async pageIndex => {
     try {
       setIsFetch(false);
       if (lastList.length !== 0) {
-        const res = await fetchApi.callapi(page);
-        if (page === 0) {
+        const res = await fetchApi.callapi(pageIndex);
+        if (pageIndex === 0) {
           dispatch(initialFetch(res));
         } else {
           dispatch(fetchList(res));
@@ -41,7 +41,7 @@ const Rank = () => {
   const handleScroll = () => {
     const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight && isFetch === true) {
-      fetch();
+      fetch(page);
     }
   };
 
@@ -53,8 +53,8 @@ const Rank = () => {
   });
   useEffect(() => {
     dispatch(isLoading());
-    if (rankList.length === 0) {
-      fetch();
+    if (rankList.length === 0 || Boolean(location.state)) {
+      fetch(0);
     }
     dispatch(isSuccess());
   }, [location]);

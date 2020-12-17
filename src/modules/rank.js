@@ -16,7 +16,7 @@ export default function rank(state = initialState, action) {
   switch (action.type) {
     case INITIALFETCH:
       return {
-        page: state.page + 1,
+        page: 1,
         rankList: [...action.data],
         lastList: [...action.data],
       };
