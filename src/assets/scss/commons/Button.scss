@@ -16,9 +16,7 @@
     }
   }
   &.white {
-    border-spacing: 0;
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid $default-border;
     &:hover,
     &.active {
       border-color: $color-orange-1;
