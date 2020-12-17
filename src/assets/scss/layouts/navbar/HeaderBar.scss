@@ -12,10 +12,14 @@
     box-shadow: 0 5px 40px rgba(0, 0, 0, 0.03);
   }
   &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     z-index: 12;
     a {
       display: inline-block;
+      margin-right: 1rem;
     }
   }
   &__menu {
