@@ -5,7 +5,6 @@
 // theme
 $color-black: #000000;
 $color-white: #ffffff;
-
 $color-gray-0: #444444;
 $color-gray-1: #666666;
 $color-gray-2: #676767;
@@ -13,7 +12,6 @@ $color-gray-3: #9c9c9c;
 $color-gray-4: #c8c8c8;
 $color-gray-5: #cacaca;
 $color-gray-6: #dddddd;
-
 $color-orange-1: #f58220;
 $color-orange-2: #f4933f;
 $color-orange-3: #ffcb9e;
@@ -22,19 +20,14 @@ $color-orange-4: #ffdfc5;
 // from default
 $default-border: $color-gray-6;
 $default-text: $color-gray-2;
-
 //background
 $color-wrapper-background: #fafafa;
-
 // nav, header...
 $color-timer-background: #efefef;
-
 // result
 $color-fail: #ff5050;
 $color-success: #5096ff;
-
 $color-wordbox-background: #f2f2f2;
-
 // etc.
 $color-hr: #dbdbdb;
 
@@ -48,7 +41,6 @@ $font-size-2: $font-size-base * 1.125; // 18px
 $font-size-3: $font-size-base * 1; // 16px
 $font-size-4: $font-size-base * 0.875; // 14px
 $font-size-5: $font-size-base * 0.75; // 12px
-
 $h1-font-size: $font-size-base * 2.5; // 40px
 $h2-font-size: $font-size-base * 2.25; // 36px
 $h3-font-size: $font-size-base * 1.875; // 30px

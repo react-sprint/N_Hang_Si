@@ -31,4 +31,27 @@
       background-color: $color-gray-1;
     }
   }
+
+  &--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -0.4rem;
+    button {
+      margin: 0 0.4rem;
+    }
+    &__shrink {
+      .button:first-child {
+        flex-basis: 33%;
+      }
+    }
+  }
+  &--bottom {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0 1.2rem 1rem;
+  }
 }

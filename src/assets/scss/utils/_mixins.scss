@@ -85,12 +85,12 @@ $breakpoints: (
 // ****************
 
 @mixin button-style {
-  min-width: 6.5rem;
   width: 100%;
+  min-width: 6.5rem;
   height: 4rem;
+  font-family: $font-stack-ko;
   font-weight: $font-weight-normal;
   font-size: $font-size-3;
-  font-family: $font-stack-ko;
 }
 
 // ****************
