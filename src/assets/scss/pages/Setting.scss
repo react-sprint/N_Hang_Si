@@ -5,6 +5,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @keyframes scaleChange {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    10% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  animation: scaleChange 4s ease-in-out;
   &__text {
     margin-top: 2rem;
     font-weight: $font-weight-bold;
