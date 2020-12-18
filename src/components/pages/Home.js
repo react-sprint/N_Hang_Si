@@ -15,7 +15,7 @@ const Home = () => {
         <img src={bannerImage} alt="배너 이미지" />
       </div>
       <div className="home--button">
-        <Button contents="시작하기" color="orange" hook={reDirect} />
+        <Button contents="게임 시작" color="orange" hook={reDirect} bold />
         <Link to="/">게임 방법</Link>
       </div>
     </div>

@@ -31,7 +31,9 @@
       background-color: $color-gray-1;
     }
   }
-
+  &.isbold {
+    font-weight: $font-weight-bold;
+  }
   &--container {
     display: flex;
     align-items: center;
