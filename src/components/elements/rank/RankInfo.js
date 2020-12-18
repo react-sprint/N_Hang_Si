@@ -36,21 +36,40 @@ const RankInfo = ({
       <div
         className={classNames('rankinfo__container', isToggle ? 'active' : '')}
       >
-        <div className={classNames('infotext', isToggle ? 'active' : '')}>
+        <div className={classNames('infobox', isToggle ? 'active' : '')}>
           <p className={isRanker ? 'ranker' : 'general'}>{ranking}위</p>
-          <div className="infotext__box">
-            <p className="infotext__box--title">작가명</p>
-            <p>{nickname}</p>
+          <div className="infotext">
+            <p className="infotext--title">작가명</p>
+            <p
+              className={classNames(
+                'infotext--contents',
+                isToggle ? 'active' : '',
+              )}
+            >
+              {nickname}
+            </p>
           </div>
-          <div className="infotext__box">
-            <p className="infotext__box--title">소요시간</p>
-            <p>
+          <div className="infotext">
+            <p className="infotext--title">소요시간</p>
+            <p
+              className={classNames(
+                'infotext--contents',
+                isToggle ? 'active' : '',
+              )}
+            >
               {time}s / {timeOut}s
             </p>
           </div>
-          <div className="infotext__box">
-            <p className="infotext__box--title">난이도</p>
-            <p>{level}</p>
+          <div className="infotext">
+            <p className="infotext--title">난이도</p>
+            <p
+              className={classNames(
+                'infotext--contents',
+                isToggle ? 'active' : '',
+              )}
+            >
+              {level}
+            </p>
           </div>
         </div>
         <div

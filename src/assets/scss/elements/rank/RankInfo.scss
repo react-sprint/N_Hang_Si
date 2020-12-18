@@ -11,8 +11,8 @@
     padding-top: 0.5rem;
     color: $color-gray-0;
     font-family: $font-stack-en;
-    font-size: 13rem;
     font-weight: $font-weight-bold;
+    font-size: 13rem;
     text-align: center;
     &.active {
       color: $color-orange-1;
@@ -22,74 +22,79 @@
     }
   }
   &__container {
-    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     position: relative;
     width: 100%;
     min-height: 10.8rem;
-    margin-top: 2rem;
-    margin-bottom: 1.8rem;
+    margin: 2rem 0 1.8rem;
     padding: 2.6rem 2.2rem;
+    border-radius: 0px 0px 1rem 1rem;
     background-color: $color-gray-0;
-    border-radius: 0px 0px 10px 10px;
     &.active {
       background-color: $color-orange-1;
     }
-    .infotext {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      p {
-        font-size: $font-size-4;
-        color: $color-gray-4;
-        font-weight: $font-weight-medium;
-      }
-      &.active {
-        p {
-          color: $color-orange-4;
-        }
-      }
-      .ranker {
-        display: none;
-      }
+  }
+  .infobox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    p {
+      font-size: $font-size-4;
+    }
+    .ranker {
+      display: none;
+    }
+    .general {
+      font-weight: $font-weight-medium;
+      color: $color-gray-4;
+      margin-bottom: 1rem;
+    }
+    &.active {
       .general {
-        margin-bottom: 1rem;
-      }
-      &__box {
-        display: flex;
-        margin-bottom: 0.5rem;
-        &:last-child {
-          margin: 0;
-        }
-        p + &--title,
-        .active > p + &--title {
-          width: 6.8rem;
-          color: $color-white;
-          font-weight: $font-weight-bold;
-        }
+        color: $color-orange-4;
       }
     }
-    .infolike {
-      display: block;
-      position: absolute;
-      top: 2.6rem;
-      right: 2.2rem;
-      width: 2.4rem;
-      text-align: center;
-      cursor: pointer;
-      svg {
-        margin-bottom: 0.4rem;
-      }
-      p {
-        color: $color-orange-1;
-        font-weight: $font-weight-medium;
-        font-size: $font-size-4;
-      }
+  }
+  .infotext {
+    display: flex;
+    margin-bottom: 0.5rem;
+    &:last-of-type {
+      margin: 0;
+    }
+    &--title {
+      width: 6.8rem;
+      font-weight: $font-weight-bold;
+      color: $color-white;
+    }
+    &--contents {
+      font-weight: $font-weight-medium;
+      color: $color-gray-4;
       &.active {
-        p {
-          color: $color-white;
-        }
+        color: $color-orange-4;
+      }
+    }
+  }
+  .infolike {
+    display: block;
+    position: absolute;
+    right: 2.2rem;
+    top: 2.6rem;
+    width: 2.4rem;
+    text-align: center;
+    cursor: pointer;
+    svg {
+      margin-bottom: 0.4rem;
+    }
+    p {
+      font-family: $font-stack-en;
+      font-weight: $font-weight-medium;
+      font-size: $font-size-4;
+      color: $color-orange-1;
+    }
+    &.active {
+      p {
+        color: $color-white;
       }
     }
   }
