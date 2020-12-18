@@ -24,9 +24,9 @@ const Setting = () => {
   return (
     <div className="setting">
       <RoundTimer time={timeOut} />
-      <div className="text__container">
-        <p className="text__container--title">주제어</p>
-        <h4 className="text__container--contents">{topic}</h4>
+      <div className="setting__text">
+        <p className="setting__text--title">주제어</p>
+        <h4 className="setting__text--contents">{topic}</h4>
       </div>
     </div>
   );
