@@ -8,7 +8,9 @@ const WordBox = ({ topic, text, color }) => {
       <p className={classNames('wordbox-title', color)}>
         <span>{topic.charAt(0)}</span>
       </p>
-      <p className="wordbox-body">{text}</p>
+      <p className="wordbox-body">
+        <span>{text}</span>
+      </p>
     </div>
   );
 };
