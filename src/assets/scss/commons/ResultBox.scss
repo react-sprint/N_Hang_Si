@@ -1,9 +1,12 @@
 @import 'utils/variables.scss';
 
 .resultbox {
-  text-align: center;
+  flex: 1;
   padding: 2.2rem 0;
-  border-radius: 8px;
+  border-radius: 0.8rem;
+  text-align: center;
+  box-shadow: 0 0.2rem 1.4rem rgba(0, 0, 0, 0.1);
+
   span {
     display: inline-block;
     width: 100%;
@@ -11,12 +14,12 @@
 
   span {
     &:first-of-type {
-      font-size: $font-size-4;
       font-weight: $font-weight-bold;
+      font-size: $font-size-4;
     }
     &:last-of-type {
-      font-size: $font-size-5;
       margin-top: 0.7rem;
+      font-size: $font-size-5;
     }
   }
 
