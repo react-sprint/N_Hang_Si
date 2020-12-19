@@ -5,13 +5,13 @@
     0% {
       opacity: 0%;
       transform: scale(0.5);
-      margin-top: 5rem;
+      margin-top: 6.3rem;
     }
     5% {
-      margin-top: 1rem;
+      opacity: 100%;
+      margin-top: 1.2rem;
     }
     10% {
-      opacity: 100%;
       transform: scale(1);
     }
     30% {
@@ -44,7 +44,7 @@
 
   &--number {
     font-family: $font-stack-en;
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: $font-weight-bold;
     letter-spacing: -0.1rem;
     color: $color-orange-1;
