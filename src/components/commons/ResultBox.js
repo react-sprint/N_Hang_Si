@@ -15,6 +15,6 @@ export default ResultBox;
 
 ResultBox.defaultProps = {
   title: '주제어',
-  text: '7자까지 쓸게요',
+  text: '상세 텍스트',
   color: 'black',
 };
