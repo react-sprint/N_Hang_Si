@@ -4,6 +4,7 @@
 .ingame {
   @include page-layout;
   .textwitharrow {
+    padding-top: 3.2rem;
     margin-bottom: 7rem;
   }
 }
