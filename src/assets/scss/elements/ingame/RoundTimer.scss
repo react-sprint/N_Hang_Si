@@ -52,8 +52,8 @@
 
   &--inner {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
     @keyframes defaultRotate {
       0% {
         transform: rotate(-90deg);

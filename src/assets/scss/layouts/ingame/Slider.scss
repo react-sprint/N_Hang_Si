@@ -3,9 +3,9 @@
 
 .slider-wrap {
   @include drag-protect();
+  overflow: hidden;
   background: $color-white;
   border-radius: 2.7rem;
-  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
+  box-shadow: 0px 0.5rem 3rem rgba(0, 0, 0, 0.06);
   margin-bottom: 4rem;
 }
