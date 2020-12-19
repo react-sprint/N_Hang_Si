@@ -50,14 +50,14 @@ const HeaderBar = ({ navbarRef, hook }) => {
 
   return (
     <>
-      <div className="headerbar">
-        <div className="headerbar__left">
+      <div className="header__inner">
+        <div className="header__logo">
           <Link to="/">
             <LogoSvg />
           </Link>
           {location.pathname === '/ingame' ? <TextTimer time={timer} /> : null}
         </div>
-        <div className="headerbar__right">
+        <div className="header__menu">
           <Hamburger el={navbarRef} hook={hook} />
         </div>
       </div>

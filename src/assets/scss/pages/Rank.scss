@@ -1,4 +1,7 @@
+@import 'utils/mixins.scss';
+
 .rank {
+  @include page-layout;
   .showstate {
     display: flex;
     justify-content: center;

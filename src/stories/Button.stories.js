@@ -20,6 +20,9 @@ export default {
         options: ['orange', 'white', 'black'],
       },
     },
+    bold: {
+      control: 'boolean',
+    },
     type: {
       control: {
         type: 'radio',
@@ -32,12 +35,13 @@ export default {
   },
 };
 
-export const Default = ({ contents, shape, color, type, active }) => (
+export const Default = ({ contents, shape, color, type, active, bold }) => (
   <Button
     contents={contents}
     shape={shape}
     color={color}
     type={type}
     active={active}
+    bold={bold}
   />
 );
