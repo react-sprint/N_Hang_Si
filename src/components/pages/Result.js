@@ -54,7 +54,7 @@ const Result = () => {
             );
           })}
         </div>
-        <div className="button--container">
+        <div className="result--button button--container">
           <Button
             contents="다시하기"
             hook={() => {
@@ -73,7 +73,7 @@ const Result = () => {
         <TextWithArrow text="시간 초과입니다" />
       </div>
       <ResultBackground success={false} />
-      <div className="button--container">
+      <div className="button--container button--bottom">
         <Button
           contents="메인화면"
           color="black"

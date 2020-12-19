@@ -4,8 +4,15 @@
   @include page-layout;
   &--title {
     margin-bottom: 3rem;
+    &:nth-of-type(1) {
+      padding-top: 3.2rem;
+    }
   }
   &--word {
     padding-bottom: 3rem;
+  }
+
+  &--button {
+    padding-bottom: 1rem;
   }
 }
