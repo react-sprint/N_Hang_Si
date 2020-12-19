@@ -54,7 +54,7 @@ const Result = () => {
             );
           })}
         </div>
-        <div className="result--button button--container">
+        <div className="result--button button--bottom button--container">
           <Button
             contents="다시하기"
             hook={() => {
