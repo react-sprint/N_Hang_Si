@@ -10,12 +10,13 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   z-index: 1000;
 }
 main {
   @include nav-sliding-time;
-  margin-top: 7rem;
+  margin-top: 8rem;
   padding: 0 1.6rem;
   &.active {
     -webkit-transform: translateX(-20rem);

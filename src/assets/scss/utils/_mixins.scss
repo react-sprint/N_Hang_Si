@@ -73,7 +73,7 @@ $breakpoints: (
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: calc(100vh - 10rem);
+  min-height: calc(100vh - 8rem);
 }
 
 @mixin page-center-layout {
