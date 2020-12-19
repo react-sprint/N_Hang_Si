@@ -16,15 +16,18 @@ const Textarea = ({
     setValue(e.target.value);
     hook(e.target.value);
   };
-  const onKeyPress = e => {
+  const onKeyUp = e => {
     if (e.key === 'Enter') {
       if (topic.length - 1 === indexNow) {
         submitPush();
-        e.preventDefault();
       } else {
         listPush();
-        e.preventDefault();
       }
+    }
+  };
+  const onKeyDown = e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
     }
   };
 
@@ -39,7 +42,8 @@ const Textarea = ({
       value={value}
       placeholder={placeholder}
       onChange={onChange}
-      onKeyPress={onKeyPress}
+      onKeyUp={onKeyUp}
+      onKeyDown={onKeyDown}
       tabIndex={-1}
       ref={thisComponentRef}
     />
