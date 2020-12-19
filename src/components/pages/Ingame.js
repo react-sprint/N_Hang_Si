@@ -67,7 +67,7 @@ const Ingame = () => {
         listPush={listPush}
         submitPush={submitPush}
       />
-      <div className="ingame--botton button--bottom">
+      <div className="ingame--botton">
         {indexNow === topic.length - 1 ? (
           <Button contents="제출하기" color="orange" hook={submitPush} />
         ) : (
