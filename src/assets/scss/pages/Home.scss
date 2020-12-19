@@ -7,11 +7,11 @@
     img {
       display: block;
       width: 80%;
-      margin: 0 auto;
+      margin: 0 auto 1.2rem;
     }
   }
   &--button {
-    padding: 5rem;
+    padding: 0 5rem;
     a {
       display: block;
       color: $color-gray-1;
@@ -23,5 +23,15 @@
         color: $color-gray-3;
       }
     }
+  }
+  &--desc {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 4.3rem 0;
+    background: $color-wrapper-background;
+    color: $color-gray-3;
+    text-align: center;
   }
 }
