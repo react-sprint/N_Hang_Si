@@ -1,4 +1,7 @@
+@import 'utils/mixins.scss';
+
 .result {
+  @include page-layout;
   &--title {
     margin-bottom: 3rem;
   }

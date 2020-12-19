@@ -1,6 +1,8 @@
+@import 'utils/mixins.scss';
 @import 'utils/variables.scss';
 
 .home {
+  @include page-center-layout;
   &--banner {
     img {
       display: block;

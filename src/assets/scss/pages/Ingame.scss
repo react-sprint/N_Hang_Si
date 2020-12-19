@@ -1,6 +1,8 @@
+@import 'utils/mixins.scss';
 @import 'utils/variables.scss';
 
 .ingame {
+  @include page-layout;
   .textwitharrow {
     margin-bottom: 7rem;
   }

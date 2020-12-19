@@ -69,6 +69,19 @@ $breakpoints: (
   align-items: center;
 }
 
+@mixin page-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - 10rem);
+}
+
+@mixin page-center-layout {
+  @include page-layout;
+  justify-content: center;
+  padding-bottom: 7.2rem;
+}
+
 // ****************
 // SpaceType
 // ****************

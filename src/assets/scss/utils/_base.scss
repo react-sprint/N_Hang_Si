@@ -16,7 +16,7 @@ header {
 main {
   @include nav-sliding-time;
   margin-top: 7rem;
-  padding: 4rem 1.6rem;
+  padding: 0 1.6rem;
   &.active {
     -webkit-transform: translateX(-20rem);
     -ms-transform: translateX(-20rem);
