@@ -1,0 +1,58 @@
+.font__changer {
+  //   color: $color-white;
+  color: #ffffff;
+  p {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .changer__container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      position: relative;
+      display: inline-block;
+      padding: 0;
+      width: 2.2rem;
+      min-width: auto;
+      height: 2.2rem;
+      border: 2px solid #ffffff;
+      background-color: transparent;
+      border-radius: 100%;
+      font-size: 0.1rem;
+      color: transparent;
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: inline-block;
+        width: 40%;
+        height: 0.2rem;
+        background-color: #ffffff;
+        content: '';
+      }
+      &::before {
+        transform: translate(-50%, -50%);
+      }
+      &:first-child::after {
+        display: none;
+      }
+      &:last-child::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+    span {
+      display: inline-block;
+      min-width: 3rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+  }
+}
