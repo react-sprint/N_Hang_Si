@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '@/assets/scss/pages/Ingame.scss';
 import { useHistory, useLocation } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { modalOpen } from '@/modules/status';
 import Slider from '@/components/layouts/ingame/Slider';
 import Button from '@/components/commons/Button';
