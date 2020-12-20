@@ -9,7 +9,6 @@ const FontChanger = () => {
   const onDecrease = () => {
     setNumber(number - 1);
   };
-
   return (
     <>
       <div className="font__changer">

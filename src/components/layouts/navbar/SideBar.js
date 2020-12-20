@@ -21,6 +21,7 @@ const SideBar = ({ isActive }) => {
           </Link>
         </div>
       </div>
+
       <div className="sidebar__bottom">
         <FontChanger />
         <div className="sidebar__bottom--title">
