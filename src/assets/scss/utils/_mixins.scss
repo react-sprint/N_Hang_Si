@@ -69,6 +69,19 @@ $breakpoints: (
   align-items: center;
 }
 
+@mixin page-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - 8rem);
+}
+
+@mixin page-center-layout {
+  @include page-layout;
+  justify-content: center;
+  padding-bottom: 7.2rem;
+}
+
 // ****************
 // SpaceType
 // ****************
@@ -85,12 +98,12 @@ $breakpoints: (
 // ****************
 
 @mixin button-style {
-  min-width: 6.5rem;
   width: 100%;
+  min-width: 6.5rem;
   height: 4rem;
+  font-family: $font-stack-ko;
   font-weight: $font-weight-normal;
   font-size: $font-size-3;
-  font-family: $font-stack-ko;
 }
 
 // ****************

@@ -2,42 +2,45 @@
 
 .wordbox {
   display: flex;
-  border-radius: 8px;
   overflow: hidden;
+  border-radius: 8px;
   margin-bottom: 1.8rem;
-  &:last-child {
-    margin-bottom: 0;
-  }
-  p {
-    &:first-of-type {
-      font-size: $font-size-1;
-      font-weight: $font-weight-bold;
-      color: $color-gray-0;
-      position: relative;
-      text-align: center;
-      padding: 1.75rem 0;
+  &-title {
+    position: relative;
+    padding: 1.75rem 0;
+    background-color: $color-white;
+    border: 1px solid $color-wordbox-background;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-1;
+    color: $color-gray-0;
+    text-align: center;
+    box-shadow: 0 0.2rem 1.4rem rgba(0, 0, 0, 0.1);
+    span {
+      display: inline-block;
+      min-width: 6.8rem;
       background-color: $color-white;
-      span {
-        display: inline-block;
-        min-width: 6.8rem;
-        background-color: $color-white;
-      }
-      &.orange {
-        color: $color-orange-1;
-      }
-      &.blue {
-        color: $color-success;
-      }
-      &.red {
-        color: $color-fail;
-      }
     }
-    &:last-of-type {
-      width: 100%;
-      padding: 1.1rem 2rem;
-      color: $color-gray-2;
-      background-color: $color-wordbox-background;
-      font-size: $font-size-5;
+    &.orange {
+      color: $color-orange-1;
+    }
+    &.blue {
+      color: $color-success;
+    }
+    &.red {
+      color: $color-fail;
+    }
+  }
+  &-body {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1.1rem 2rem;
+    background-color: $color-wordbox-background;
+    color: $color-gray-2;
+    font-size: $font-size-4;
+    span {
+      display: block;
+      line-height: 1.4;
     }
   }
 }

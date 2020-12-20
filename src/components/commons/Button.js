@@ -5,7 +5,16 @@ import '@/assets/scss/commons/Button.scss';
 
 const TOGGLE = 'toggle';
 
-const Button = ({ contents, shape, color, active, type, hook, value }) => {
+const Button = ({
+  contents,
+  shape,
+  color,
+  active,
+  type,
+  hook,
+  value,
+  bold,
+}) => {
   const [isActive, setIsActive] = useState(active);
   const onToggle = e => {
     setIsActive(!isActive);
@@ -34,7 +43,13 @@ const Button = ({ contents, shape, color, active, type, hook, value }) => {
       return (
         <button
           onClick={onClick}
-          className={classNames('button', shape, color, active ? 'active' : '')}
+          className={classNames(
+            'button',
+            shape,
+            color,
+            active ? 'active' : '',
+            bold ? 'isbold' : '',
+          )}
           value={value}
         >
           {contents}
@@ -48,6 +63,7 @@ Button.defaultProps = {
   shape: 'default',
   color: 'white',
   active: false,
+  bold: false,
   type: 'button',
   value: '',
   hook: () => {},

@@ -42,12 +42,19 @@ const Result = () => {
         <div className="result--title">
           <TextWithArrow text={`${nickname}결과`} />
         </div>
-        {topic.split('').map((word, index) => {
-          return (
-            <WordBox key={word} topic={word} text={list[index]} color="blue" />
-          );
-        })}
-        <div>
+        <div className="result--word">
+          {topic.split('').map((word, index) => {
+            return (
+              <WordBox
+                key={word}
+                topic={word}
+                text={list[index]}
+                color="blue"
+              />
+            );
+          })}
+        </div>
+        <div className="result--button button--bottom button--container">
           <Button
             contents="다시하기"
             hook={() => {
@@ -62,9 +69,11 @@ const Result = () => {
 
   return (
     <div className="result">
-      <TextWithArrow text="시간 초과입니다" />
+      <div className="result--title">
+        <TextWithArrow text="시간 초과입니다" />
+      </div>
       <ResultBackground success={false} />
-      <div>
+      <div className="button--container button--bottom">
         <Button
           contents="메인화면"
           color="black"
