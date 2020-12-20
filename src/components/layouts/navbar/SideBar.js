@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import LogoSvg from '@/assets/images/svg/LogoSvg';
 import GithubSvg from '@/assets/images/svg/GithubSvg';
+import FontChanger from '@/components/elements/nav/FontChanger';
 
 import '@/assets/scss/layouts/navbar/SideBar.scss';
 
@@ -20,7 +21,9 @@ const SideBar = ({ isActive }) => {
           </Link>
         </div>
       </div>
+
       <div className="sidebar__bottom">
+        <FontChanger />
         <div className="sidebar__bottom--title">
           <p>Developer</p>
           <GithubSvg />
