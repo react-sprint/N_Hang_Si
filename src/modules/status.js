@@ -17,7 +17,7 @@ const initialState = {
   loading: false,
   errorMessage: null,
   modalStatus: false,
-  modalText: '',
+  modalText: '모달입니다',
 };
 
 export default function statusManagement(state = initialState, action) {

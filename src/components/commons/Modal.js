@@ -4,34 +4,31 @@ import '@/assets/scss/commons/Modal.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { modalClose } from '@/modules/status';
 
-const ResultBox = ({ text }) => {
+const Modal = () => {
   const dispatch = useDispatch();
-  const { modalStatus } = useSelector(state => ({
+  const { modalStatus, modalText } = useSelector(state => ({
     modalStatus: state.status.modalStatus,
+    modalText: state.status.modalText,
   }));
 
-  const close = () => {
-    dispatch(modalClose());
-  };
-
   useEffect(() => {
-    const countModalTime = () =>
-      setInterval(() => {
-        close();
-      }, 2000);
-    countModalTime();
-  }, []);
+    if (modalStatus === true) {
+      const countModalTime = setTimeout(() => {
+        dispatch(modalClose());
+      }, 1000);
+      return () => {
+        clearTimeout(countModalTime);
+      };
+    }
+    return false;
+  }, [modalStatus]);
   return (
     <div className={classNames('modal-container', modalStatus ? 'active' : '')}>
       <div className={classNames('modal')}>
-        <p className="modal--text">{text}</p>
+        <p className="modal--text">{modalText}</p>
       </div>
     </div>
   );
 };
 
-export default ResultBox;
-
-ResultBox.defaultProps = {
-  text: '모달 내용입니다',
-};
+export default Modal;
