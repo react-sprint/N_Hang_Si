@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import '@/assets/scss/App.scss';
 import Modal from '@/components/commons/Modal';
 import Navbar from '@/components/pages/Navbar';
@@ -14,9 +13,6 @@ import Rule from '@/components/pages/Rule';
 
 const App = () => {
   const [isActive, setIsActive] = useState(false);
-  const { modalText } = useSelector(state => ({
-    modalText: state.status.modalText,
-  }));
   const navToggle = state => {
     setIsActive(state);
   };
@@ -24,7 +20,7 @@ const App = () => {
     <div className="app">
       <BrowserRouter>
         <Navbar isActive={isActive} hook={navToggle} />
-        <Modal text={modalText} />
+        <Modal />
         <main className={isActive ? 'active' : 'deactive'}>
           <Switch>
             <Route path="/" exact component={Home} />
