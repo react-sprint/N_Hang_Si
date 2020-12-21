@@ -11,7 +11,7 @@ const Textarea = ({
   submitPush,
 }) => {
   const [value, setValue] = useState('');
-  const thisComponentRef = useRef();
+  const thisSliderRef = useRef();
   const onChange = e => {
     setValue(e.target.value);
     hook(e.target.value);
@@ -33,7 +33,7 @@ const Textarea = ({
 
   useEffect(() => {
     if (wordNow === topic[indexNow]) {
-      thisComponentRef.current.focus();
+      thisSliderRef.current.focus();
     }
   }, []);
   return (
@@ -45,7 +45,7 @@ const Textarea = ({
       onKeyUp={onKeyUp}
       onKeyDown={onKeyDown}
       tabIndex={-1}
-      ref={thisComponentRef}
+      ref={thisSliderRef}
     />
   );
 };
