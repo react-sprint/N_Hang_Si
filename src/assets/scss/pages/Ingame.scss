@@ -2,7 +2,7 @@
 @import 'utils/variables.scss';
 
 .ingame {
-  @include page-layout;
+  @include page-center-layout;
   .textwitharrow {
     padding-top: 3.2rem;
     margin-bottom: 7rem;
