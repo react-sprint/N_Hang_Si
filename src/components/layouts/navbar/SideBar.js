@@ -16,7 +16,7 @@ const SideBar = ({ isActive }) => {
           <Link className="link__item" to="/rank">
             <span>명예의 전당</span>
           </Link>
-          <Link className="link__item" to="/">
+          <Link className="link__item" to="/rule">
             <span>게임 방법</span>
           </Link>
         </div>

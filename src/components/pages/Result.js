@@ -40,7 +40,7 @@ const Result = () => {
         </div>
         <ResultBackground success topic={topic} useTime={time} level={level} />
         <div className="result--title">
-          <TextWithArrow text={`${nickname}결과`} />
+          <TextWithArrow text="N행시 결과" />
         </div>
         <div className="result--word">
           {topic.split('').map((word, index) => {
@@ -85,7 +85,7 @@ const Result = () => {
           contents="다시 도전하기"
           color="orange"
           hook={() => {
-            history.push('/ingame', [topic]);
+            history.push('/prepare', [topic]);
           }}
         />
       </div>

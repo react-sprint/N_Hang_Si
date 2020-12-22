@@ -8,6 +8,7 @@ import LevelBoxTop from '@/components/layouts/prepare/LevelBoxTop';
 import RadioButtonBox from '@/components/layouts/prepare/RadioButtonBox';
 import NicknameInputBox from '@/components/layouts/prepare/NicknameInputBox';
 import Button from '@/components/commons/Button';
+import { modalOpen } from '@/modules/status';
 
 import '@/assets/scss/pages/Prepare.scss';
 
@@ -15,7 +16,7 @@ const Prepare = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [level, setLevel] = useState('일반인');
-  const [topicLength, setTopicLength] = useState('3');
+  const [topicLength, setTopicLength] = useState('4');
   const [nickname, setNickname] = useState('');
 
   const levelObject = {
@@ -44,10 +45,15 @@ const Prepare = () => {
 
   const nextStep = () => {
     if (!level || !topicLength || !nickname) {
-      return alert('모든 설정을 완료해주세요');
+      dispatch(modalOpen('모든 항목을 입력해주세요'));
+      return false;
     }
     dispatch(nextstep(nickname, level, topicLength));
     return history.push('/setting');
+  };
+
+  const reDirect = () => {
+    return history.push('/rule');
   };
 
   return (
@@ -73,7 +79,7 @@ const Prepare = () => {
           'button--container__shrink',
         )}
       >
-        <Button contents="게임설명" color="black" />
+        <Button contents="게임 방법" color="black" hook={reDirect} />
         <Button contents="시작하기" color="orange" hook={nextStep} />
       </div>
     </div>

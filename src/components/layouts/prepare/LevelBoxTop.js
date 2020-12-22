@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import Easy from '@/assets/images/easy.png';
-import Normal from '@/assets/images/normal.png';
-import Hard from '@/assets/images/hard.png';
+import Easy from '@/assets/images/easy.svg';
+import Normal from '@/assets/images/normal.svg';
+import Hard from '@/assets/images/hard.svg';
 
 import '@/assets/scss/layouts/prepare/LevelBoxTop.scss';
 

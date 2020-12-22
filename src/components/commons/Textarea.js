@@ -11,26 +11,29 @@ const Textarea = ({
   submitPush,
 }) => {
   const [value, setValue] = useState('');
-  const thisComponentRef = useRef();
+  const thisSliderRef = useRef();
   const onChange = e => {
     setValue(e.target.value);
     hook(e.target.value);
   };
-  const onKeyPress = e => {
+  const onKeyUp = e => {
     if (e.key === 'Enter') {
       if (topic.length - 1 === indexNow) {
         submitPush();
-        e.preventDefault();
       } else {
         listPush();
-        e.preventDefault();
       }
+    }
+  };
+  const onKeyDown = e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
     }
   };
 
   useEffect(() => {
     if (wordNow === topic[indexNow]) {
-      thisComponentRef.current.focus();
+      thisSliderRef.current.focus();
     }
   }, []);
   return (
@@ -39,9 +42,10 @@ const Textarea = ({
       value={value}
       placeholder={placeholder}
       onChange={onChange}
-      onKeyPress={onKeyPress}
+      onKeyUp={onKeyUp}
+      onKeyDown={onKeyDown}
       tabIndex={-1}
-      ref={thisComponentRef}
+      ref={thisSliderRef}
     />
   );
 };
