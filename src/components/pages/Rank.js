@@ -7,7 +7,6 @@ import useLikes from '@/utils/hooks/useLikes';
 import useFetchApi from '@/utils/hooks/useFetchApi';
 
 import RankBox from '@/components/layouts/rank/RankBox';
-import LogoSvg from '@/assets/images/svg/LogoSvg';
 
 import '@/assets/scss/pages/Rank.scss';
 
@@ -79,12 +78,14 @@ const Rank = () => {
       ))}
       {isFetch ? null : (
         <div className="showstate">
-          <LogoSvg />
+          <div className="loading">
+            <p />
+          </div>
         </div>
       )}
       {lastList.length === 0 ? (
         <div className="showstate">
-          <p>마지막 N행시입니다</p>
+          <p>마지막 N행시입니다.</p>
         </div>
       ) : null}
     </div>

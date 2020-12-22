@@ -6,12 +6,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 5rem;
+    margin: 0 auto;
+    width: 20em;
+    height: 20em;
+    z-index: 11111;
+    .loading {
+      height: 5rem;
+      width: 5rem;
+      height: 5rem;
+      z-index: 1111;
+      border: 0.5rem solid $color-orange-1;
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+      -webkit-animation: spin 1s ease-in-out infinite;
+    }
     p {
-      font-size: $font-size-3;
       font-weight: $font-weight-bold;
+      font-size: $font-size-4;
       color: $color-gray-3;
+    }
+
+    @keyframes spin {
+      to {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    @-webkit-keyframes spin {
+      to {
+        -webkit-transform: rotate(360deg);
+      }
     }
   }
 }
