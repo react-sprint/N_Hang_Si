@@ -1,5 +1,5 @@
 import React from 'react';
-import ArrowSvg from '@/assets/images/svg/ArrowSvg.svg';
+import ArrowSvg from '@/assets/images/ArrowSvg.svg';
 
 import '@/assets/scss/commons/TextWithArrow.scss';
 

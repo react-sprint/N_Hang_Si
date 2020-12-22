@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { timeRecord } from '@/modules/game';
-import LogoSvg from '@/assets/images/svg/LogoSvg';
+import LogoSvg from '@/assets/images/LogoSvg';
 import Hamburger from '@/components/elements/nav/Hamburger';
 import TextTimer from '@/components/elements/nav/TextTimer';
 import BarTimer from '@/components/elements/nav/BarTimer';
