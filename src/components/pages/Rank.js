@@ -78,9 +78,7 @@ const Rank = () => {
       ))}
       {isFetch ? null : (
         <div className="showstate">
-          <div className="loading">
-            <p />
-          </div>
+          <div className="loading" />
         </div>
       )}
       {lastList.length === 0 ? (
