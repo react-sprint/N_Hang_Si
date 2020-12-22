@@ -11,8 +11,8 @@ const RoundTimer = ({ time }) => {
       </p>
       <div className="round-timer--inner">
         <svg>
-          <circle cx="50" cy="50" r="42" />
-          <circle cx="50" cy="50" r="42" />
+          <circle cx="50%" cy="50%" r="42%" />
+          <circle cx="50%" cy="50%" r="42%" />
         </svg>
       </div>
       <div className="round-timer--outer" />
