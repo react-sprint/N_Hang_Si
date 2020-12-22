@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -9,18 +9,24 @@ import RoundTimer from '@/components/elements/ingame/RoundTimer';
 import '@/assets/scss/pages/Setting.scss';
 
 const Setting = () => {
+  const [topic, setTopic] = useState('');
+
   const { timeOut, topicLength } = useSelector(state => ({
     timeOut: state.game.timeout,
     topicLength: state.game.topicLength,
   }));
   const history = useHistory();
   const topicList = TopicList[`length${topicLength}`];
-  const topic = topicList[Math.floor(Math.random() * topicList.length)];
   useEffect(() => {
-    document.addEventListener('animationend', () => {
-      history.push('/ingame', { topic });
-    });
+    if (topic) {
+      document.addEventListener('animationend', () => {
+        history.replace('/ingame', { topic });
+      });
+    }
   }, [topic]);
+  useEffect(() => {
+    setTopic(topicList[Math.floor(Math.random() * topicList.length)]);
+  }, []);
   return (
     <div className="setting">
       <RoundTimer time={timeOut} />

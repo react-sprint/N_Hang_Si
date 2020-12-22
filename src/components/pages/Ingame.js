@@ -56,7 +56,7 @@ const Ingame = () => {
 
   useEffect(() => {
     if (success === true) {
-      history.push('/result', matchData);
+      history.replace('/result', matchData);
     }
   }, [success]);
 
