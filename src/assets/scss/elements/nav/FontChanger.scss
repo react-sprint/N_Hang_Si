@@ -14,38 +14,18 @@
     button {
       position: relative;
       display: inline-block;
+      margin: 0 0.2rem;
       padding: 0;
-      width: 2.2rem;
+      width: 2.6rem;
       min-width: auto;
-      height: 2.2rem;
+      height: 2.6rem;
       border: 2px solid #ffffff;
       background-color: transparent;
       border-radius: 100%;
       font-size: 0.1rem;
-      color: transparent;
+      color: #ffffff;
       &:hover {
         opacity: 0.5;
-      }
-
-      &::before,
-      &::after {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        display: inline-block;
-        width: 40%;
-        height: 0.2rem;
-        background-color: #ffffff;
-        content: '';
-      }
-      &::before {
-        transform: translate(-50%, -50%);
-      }
-      &:first-child::after {
-        display: none;
-      }
-      &:last-child::after {
-        transform: translate(-50%, -50%) rotate(90deg);
       }
     }
     span {
