@@ -16,7 +16,7 @@ const Prepare = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [level, setLevel] = useState('일반인');
-  const [topicLength, setTopicLength] = useState('3');
+  const [topicLength, setTopicLength] = useState('4');
   const [nickname, setNickname] = useState('');
 
   const levelObject = {
@@ -52,6 +52,10 @@ const Prepare = () => {
     return history.push('/setting');
   };
 
+  const reDirect = () => {
+    return history.push('/rule');
+  };
+
   return (
     <div className="prepare">
       <LevelBoxTop select={level} />
@@ -75,7 +79,7 @@ const Prepare = () => {
           'button--container__shrink',
         )}
       >
-        <Button contents="게임 방법" color="black" />
+        <Button contents="게임 방법" color="black" hook={reDirect} />
         <Button contents="시작하기" color="orange" hook={nextStep} />
       </div>
     </div>
