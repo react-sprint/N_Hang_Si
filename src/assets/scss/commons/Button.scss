@@ -2,6 +2,7 @@
 @import 'utils/mixins.scss';
 
 .button {
+  @include drag-protect;
   &.default {
     border-radius: 0.5rem;
   }

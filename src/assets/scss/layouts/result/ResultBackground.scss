@@ -1,6 +1,8 @@
 @import 'utils/variables.scss';
+@import 'utils/mixins.scss';
 
 .result-bar {
+  @include drag-protect;
   position: relative;
   &--title {
     position: absolute;
@@ -22,6 +24,7 @@
 }
 
 .success {
+  @include drag-protect;
   .result-bar {
     &--title {
       color: $color-white;

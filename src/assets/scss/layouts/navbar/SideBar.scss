@@ -3,6 +3,7 @@
 .sidebar {
   @include flex-column-center;
   @include nav-sliding-time;
+  @include drag-protect;
   justify-content: space-between;
   position: absolute;
   right: 0;

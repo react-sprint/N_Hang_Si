@@ -1,5 +1,7 @@
 @import 'utils/mixins.scss';
+@import 'utils/mixins.scss';
 
 .prepare {
   @include page-layout;
+  @include drag-protect;
 }
