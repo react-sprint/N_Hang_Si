@@ -17,6 +17,7 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'react/button-has-type': 'off',
     'react/prop-types': 'off',
     'import/no-unresolved': 'off',
     'react/jsx-filename-extension': [

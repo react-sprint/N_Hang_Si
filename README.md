@@ -43,6 +43,32 @@ yarn storybook
 
 ## Issue
 
+## 개발 환경에 따른 babel-loader 이슈(20.11.29)
+
+개발 환경을 바꿨더니 `babel-loader` 버전에 대한 오류 발생, 버전 `8.1.0`을 설치해줌
+
+```bash
+npm install babel-loader@8.1.0
+```
+
+### .env에서 OS 때문에 생기는 이슈(20.11.24)
+
+각 OS에 맞는 .env 설정이 필요함
+
+```.env
+// .env
+
+// Window 설정
+SASS_PATH=node_modules:./node_modules;./src/assets/scss/
+
+// Mac 설정
+SASS_PATH=node_modules:src/assets/scss/
+
+// 공통 설정
+REACT_APP_API_HOST=방구석 호랑이 문의
+REACT_APP_API_KEY=방구석 호랑이 문의
+```
+
 ### node-sass 버전때문에 생기는 이슈(20.11.18)
 
 node-sass버전 확인 필요
@@ -57,6 +83,7 @@ npm install node-sass@4.14.1
 
 ```bash
 N_Hang_Si
+├── .env
 ├── README.md
 ├── craco.config.js
 ├── jsconfig.json

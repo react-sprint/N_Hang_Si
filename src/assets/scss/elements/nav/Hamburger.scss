@@ -1,0 +1,42 @@
+@import 'utils/mixins.scss';
+@import 'utils/variables.scss';
+
+.hamburger {
+  @include space-clear;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  background-color: transparent;
+  transition: opacity 0.3s;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  &__line {
+    width: 2.4rem;
+    height: 0.4rem;
+    background-color: $color-orange-1;
+    margin: 0.17rem 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0.5rem;
+  }
+
+  &.active {
+    .hamburger__line {
+      &:nth-of-type(1) {
+        opacity: 1;
+        transform: translateY(0.755rem) rotate(45deg);
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        opacity: 1;
+        transform: translateY(-0.735rem) rotate(-45deg);
+      }
+    }
+  }
+}

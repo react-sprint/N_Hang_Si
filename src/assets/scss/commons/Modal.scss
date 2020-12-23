@@ -1,0 +1,46 @@
+@import 'utils/variables.scss';
+
+.modal-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff2f;
+  z-index: 3434;
+  text-align: center;
+  &.active {
+    display: flex;
+    .modal {
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          margin-bottom: -3rem;
+        }
+        100% {
+          opacity: 1;
+          margin-bottom: 0;
+        }
+      }
+      animation: fadeIn 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+  .modal {
+    background: #2e2e2ef1;
+    padding: 4rem 6rem;
+    border-radius: 0.5rem;
+    transform: translateY(-2rem);
+    box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.1);
+    &--text {
+      color: $color-orange-1;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-3;
+    }
+    button {
+      padding: 0 0.2rem;
+    }
+  }
+}

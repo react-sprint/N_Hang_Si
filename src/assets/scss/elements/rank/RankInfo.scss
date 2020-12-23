@@ -1,0 +1,101 @@
+@import 'utils/variables.scss';
+@import 'utils/mixins.scss';
+
+.rankinfo {
+  @include drag-protect;
+  display: flex;
+  align-items: center;
+  &__toprank {
+    width: 7.4rem;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+    color: $color-gray-0;
+    font-family: $font-stack-en;
+    font-weight: $font-weight-bold;
+    font-size: 13rem;
+    text-align: center;
+    &.active {
+      color: $color-orange-1;
+    }
+    &.general {
+      display: none;
+    }
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    min-height: 10.8rem;
+    margin: 2rem 0 1.8rem;
+    padding: 2.6rem 2.2rem;
+    border-radius: 0px 0px 1rem 1rem;
+    background-color: $color-gray-0;
+    &.active {
+      background-color: $color-orange-1;
+    }
+  }
+  .infobox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    p {
+      font-size: $font-size-4;
+    }
+    .ranker {
+      display: none;
+    }
+    .general {
+      font-weight: $font-weight-medium;
+      color: $color-gray-4;
+      margin-bottom: 1rem;
+    }
+    &.active {
+      .general {
+        color: $color-orange-4;
+      }
+    }
+  }
+  .infotext {
+    display: flex;
+    margin-bottom: 0.5rem;
+    &:last-of-type {
+      margin: 0;
+    }
+    &--title {
+      width: 6.8rem;
+      font-weight: $font-weight-bold;
+      color: $color-white;
+    }
+    &--contents {
+      font-weight: $font-weight-medium;
+      color: $color-gray-4;
+      &.active {
+        color: $color-orange-4;
+      }
+    }
+  }
+  .infolike {
+    display: block;
+    position: absolute;
+    right: 2.2rem;
+    top: 2.6rem;
+    width: 2.4rem;
+    text-align: center;
+    cursor: pointer;
+    svg {
+      margin-bottom: 0.4rem;
+    }
+    p {
+      font-family: $font-stack-en;
+      font-weight: $font-weight-medium;
+      font-size: $font-size-4;
+      color: $color-orange-1;
+    }
+    &.active {
+      p {
+        color: $color-white;
+      }
+    }
+  }
+}

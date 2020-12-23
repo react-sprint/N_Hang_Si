@@ -1,0 +1,11 @@
+@import 'utils/mixins.scss';
+@import 'utils/variables.scss';
+
+.ingame {
+  @include page-center-layout;
+  @include drag-protect;
+  .textwitharrow {
+    padding-top: 3.2rem;
+    margin-bottom: 7rem;
+  }
+}

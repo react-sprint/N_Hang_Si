@@ -1,7 +1,33 @@
 @import 'utils/variables.scss';
+@import 'utils/mixins.scss';
 
-* {
-  font-family: $font-stack;
+html {
+  font-size: 62.5%;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+main {
+  @include nav-sliding-time;
+  margin-top: 8rem;
+  padding: 0 1.6rem;
+  &.active {
+    -webkit-transform: translateX(-20rem);
+    -ms-transform: translateX(-20rem);
+    transform: translateX(-20rem);
+  }
+  &.deactive {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
 }
 h1,
 h2 {
@@ -22,4 +48,86 @@ h3 {
 }
 h4 {
   font-size: $h4-font-size;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+button {
+  @include space-clear;
+  display: inline-block;
+  width: 100%;
+  min-width: 3.6rem;
+  height: 4rem;
+  padding: 0.8rem 0;
+  color: $default-text;
+  border-color: $default-border;
+  background-image: initial;
+  background-image: none;
+  background-color: initial;
+  background-color: $color-white;
+  background-repeat: initial;
+  background-repeat: no-repeat;
+  font-family: $font-stack-ko;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-3;
+  text-decoration: none;
+  text-align: center;
+  text-indent: 0;
+  outline: none;
+  cursor: pointer;
+}
+input[type='text'] {
+  @include space-clear;
+  width: 100%;
+  height: 4rem;
+  padding: 0.8rem;
+  border-top-width: initial;
+  border-bottom-width: initial;
+  border-right-width: initial;
+  border-left-width: initial;
+  border-width: 1px;
+  border-style: solid;
+  border-top-color: initial;
+  border-bottom-color: initial;
+  border-right-color: initial;
+  border-left-color: initial;
+  border-color: $default-border;
+  border-radius: 0.8rem;
+  border-image: initial;
+  border-image: none;
+  font-family: $font-stack-ko;
+  font-size: $font-size-4;
+  font-weight: $font-weight-bold;
+  line-height: normal;
+  color: $default-text;
+  text-decoration: none;
+  outline: none;
+}
+textarea {
+  @include space-clear;
+  width: 100%;
+  min-height: 4.5rem;
+  padding: 1.2rem;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-4;
+  font-family: $font-stack-ko;
+  line-height: 1.2;
+  text-decoration: none;
+  color: $default-text;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $color-gray-4;
+  background-color: $color-white;
+  resize: none;
+  outline: none;
+}
+hr {
+  border: 1px dashed $color-hr;
 }

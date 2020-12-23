@@ -1,7 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import 'utils/variables.scss';
 
 html,
 body,
@@ -84,12 +81,14 @@ time,
 mark,
 audio,
 video {
+  font-family: $font-stack-ko;
+  letter-spacing: -0.03rem;
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -104,6 +103,7 @@ menu,
 nav,
 section {
   display: block;
+  box-sizing: border-box;
 }
 body {
   line-height: 1;

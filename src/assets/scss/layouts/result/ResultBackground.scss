@@ -1,0 +1,81 @@
+@import 'utils/variables.scss';
+@import 'utils/mixins.scss';
+
+.result-bar {
+  @include drag-protect;
+  position: relative;
+  &--title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: $color-white;
+    background: $color-success;
+    font-size: $font-size-2;
+    padding: 3.4rem 6.4rem;
+    text-align: center;
+    border-radius: 6rem 6rem 0 0;
+    letter-spacing: 1em;
+    text-indent: 1em;
+  }
+  &--desc {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.success {
+  @include drag-protect;
+  .result-bar {
+    &--title {
+      color: $color-white;
+      background: $color-success;
+    }
+    &--desc {
+      position: relative;
+      top: 7.3rem;
+      max-width: 38rem;
+      margin: 0 auto;
+      padding: 0 1.2rem;
+    }
+
+    &--background {
+      background: url('../../../images/banner3.png') no-repeat center center;
+      background-size: cover;
+      padding-bottom: 15rem;
+    }
+  }
+}
+
+.failed {
+  padding-bottom: 15rem;
+  .result-bar {
+    &--title {
+      color: $color-white;
+      background: $color-fail;
+    }
+    &--desc {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-self: center;
+      font-size: $font-size-4;
+      text-align: center;
+      padding-top: 10rem;
+      .main {
+        font-size: 2.8rem;
+        font-weight: $font-weight-bold;
+        color: $color-fail;
+        margin-bottom: 1rem;
+      }
+    }
+    &--background {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 10rem;
+      background: url('../../../images/banner3.png') no-repeat center center;
+      background-size: cover;
+      padding-bottom: 15rem;
+    }
+  }
+}

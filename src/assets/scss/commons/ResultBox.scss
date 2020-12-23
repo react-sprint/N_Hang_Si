@@ -1,0 +1,59 @@
+@import 'utils/variables.scss';
+
+.resultbox {
+  flex: 1;
+  padding: 2.2rem 0;
+  border-radius: 0.8rem;
+  text-align: center;
+  box-shadow: 0 0.2rem 1.4rem rgba(0, 0, 0, 0.1);
+
+  span {
+    display: inline-block;
+    width: 100%;
+  }
+
+  span {
+    &:first-of-type {
+      font-weight: $font-weight-bold;
+      font-size: $font-size-4;
+    }
+    &:last-of-type {
+      margin-top: 0.7rem;
+      font-size: $font-size-5;
+    }
+  }
+
+  &.white {
+    background-color: $color-white;
+    span {
+      &:first-of-type {
+        color: $color-gray-0;
+      }
+      &:last-of-type {
+        color: $color-gray-0;
+      }
+    }
+  }
+  &.black {
+    background-color: #2e2e2e;
+    span {
+      &:first-of-type {
+        color: $color-white;
+      }
+      &:last-of-type {
+        color: $color-orange-3;
+      }
+    }
+  }
+  &.gray {
+    background-color: $color-gray-0;
+    span {
+      &:first-of-type {
+        color: $color-white;
+      }
+      &:last-of-type {
+        color: $color-gray-4;
+      }
+    }
+  }
+}

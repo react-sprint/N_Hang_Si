@@ -1,0 +1,39 @@
+.font__changer {
+  color: #ffffff;
+  margin-bottom: 4rem;
+  p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  .changer__container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      position: relative;
+      display: inline-block;
+      margin: 0 0.2rem;
+      padding: 0;
+      width: 2.6rem;
+      min-width: auto;
+      height: 2.6rem;
+      border: 2px solid #ffffff;
+      background-color: transparent;
+      border-radius: 100%;
+      font-size: 0.1rem;
+      color: #ffffff;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    span {
+      display: inline-block;
+      min-width: 3rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+  }
+}

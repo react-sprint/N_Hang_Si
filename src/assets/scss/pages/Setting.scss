@@ -1,0 +1,38 @@
+@import 'utils/mixins.scss';
+@import 'utils/variables.scss';
+
+.setting {
+  @include page-center-layout;
+  @include drag-protect;
+  align-items: center;
+  @keyframes scaleChange {
+    0% {
+      transform: scale(0.5);
+      transform: translateZ(2rem);
+    }
+    30% {
+      transform: scale(1);
+      transform: translateZ(0px);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+  animation: scaleChange 4s ease-in-out;
+  &__text {
+    margin-top: 2rem;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    &--title {
+      margin-bottom: 1rem;
+      font-size: $font-size-4;
+    }
+    &--contents {
+      color: $color-orange-1;
+    }
+  }
+}

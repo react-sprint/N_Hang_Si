@@ -1,0 +1,39 @@
+@import 'utils/mixins.scss';
+@import 'utils/variables.scss';
+
+.rule {
+  @include page-center-layout;
+  &--title {
+    margin: 6rem 0;
+    text-align: center;
+    h2 {
+      font-weight: $font-weight-bold;
+      font-size: 3.8rem;
+      margin-bottom: 1.2rem;
+      .en {
+        position: relative;
+        font-family: $font-stack-en;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 1rem;
+          height: 1rem;
+          top: -0.8rem;
+          left: 0.8rem;
+          background: $color-orange-1;
+          border-radius: 50%;
+        }
+      }
+    }
+    p {
+      color: $color-gray-2;
+      font-size: 1.4rem;
+      line-height: 1.2;
+      .point {
+        font-weight: $font-weight-bold;
+        color: $color-black;
+      }
+    }
+  }
+}
