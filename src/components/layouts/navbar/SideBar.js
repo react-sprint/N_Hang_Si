@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import LogoSvg from '@/assets/images/svg/LogoSvg';
-import GithubSvg from '@/assets/images/svg/GithubSvg';
+import LogoSvg from '@/assets/images/LogoSvg';
+import GithubSvg from '@/assets/images/GithubSvg';
 import FontChanger from '@/components/elements/nav/FontChanger';
 
 import '@/assets/scss/layouts/navbar/SideBar.scss';

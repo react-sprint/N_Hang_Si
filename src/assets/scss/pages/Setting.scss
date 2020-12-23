@@ -3,6 +3,7 @@
 
 .setting {
   @include page-center-layout;
+  @include drag-protect;
   align-items: center;
   @keyframes scaleChange {
     0% {

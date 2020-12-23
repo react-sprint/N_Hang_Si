@@ -3,6 +3,7 @@
 
 .home {
   @include page-center-layout;
+  @include drag-protect;
   &--banner {
     img {
       display: block;

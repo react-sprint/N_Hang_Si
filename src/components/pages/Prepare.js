@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { nextstep } from '@/modules/game';
 import classNames from 'classnames';
 
@@ -15,9 +15,16 @@ import '@/assets/scss/pages/Prepare.scss';
 const Prepare = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [level, setLevel] = useState('일반인');
-  const [topicLength, setTopicLength] = useState('4');
-  const [nickname, setNickname] = useState('');
+  const { stateLevel, stateTopicLength, stateNickname } = useSelector(
+    state => ({
+      stateLevel: state.game.level,
+      stateTopicLength: state.game.topicLength,
+      stateNickname: state.game.nickname,
+    }),
+  );
+  const [level, setLevel] = useState(stateLevel || '일반인');
+  const [topicLength, setTopicLength] = useState(stateTopicLength || '4');
+  const [nickname, setNickname] = useState(stateNickname);
 
   const levelObject = {
     list: ['지렁이', '일반인', '박명수'],
@@ -71,7 +78,10 @@ const Prepare = () => {
         defaultValue={topicLength}
         title={topicObject.title}
       />
-      <NicknameInputBox hook={nicknameObject.Change} />
+      <NicknameInputBox
+        hook={nicknameObject.Change}
+        defaultValue={stateNickname}
+      />
       <div
         className={classNames(
           'button--bottom',

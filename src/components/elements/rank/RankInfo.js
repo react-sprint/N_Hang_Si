@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import LikeSvg from '@/assets/images/svg/LikeSvg';
+import LikeSvg from '@/assets/images/LikeSvg';
 
 import '@/assets/scss/elements/rank/RankInfo.scss';
 
