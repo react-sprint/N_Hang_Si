@@ -7,6 +7,7 @@ export default {
   argTypes: {
     time: {
       control: { type: 'range', min: 20, max: 360, step: 20 },
+      defaultValue: 40,
     },
     start: {
       control: 'boolean',
@@ -15,7 +16,7 @@ export default {
 };
 
 export const Default = ({ time, start }) => {
-  const timeOut = time || 40;
+  const timeOut = time;
   const [timer, setTimer] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   useEffect(() => {
@@ -25,6 +26,7 @@ export const Default = ({ time, start }) => {
       }
     }
   }, start);
+
   useEffect(() => {
     if (isRunning) {
       const countdown = setInterval(() => {
@@ -41,8 +43,12 @@ export const Default = ({ time, start }) => {
   }, [timer, isRunning]);
   return (
     <div className="flex-culomn">
-      <TextTimer time={timeOut - timer} timeout={timeOut} />
-      <BarTimer timeout={timeOut} isActive={isRunning} />
+      <TextTimer time={timeOut - timer} />
+      <BarTimer
+        timer={timeOut - timer}
+        timeout={timeOut}
+        isActive={isRunning}
+      />
     </div>
   );
 };
