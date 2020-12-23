@@ -10,12 +10,12 @@ import TextWithArrow from '@/components/commons/TextWithArrow';
 const Ingame = () => {
   const history = useHistory();
   const location = useLocation();
+  const dispatch = useDispatch();
   const { topic } = location.state;
   const [indexNow, setIndexNow] = useState(0);
   const [dummy, setDummy] = useState('');
   const [list, setList] = useState([]);
   const [success, setSucceess] = useState(false);
-  const dispatch = useDispatch();
 
   const matchData = {
     list,
@@ -54,6 +54,11 @@ const Ingame = () => {
     setSucceess(true);
   };
 
+  const enterEvent = () => {
+    if (indexNow === topic.length - 1) submitPush();
+    else listPush();
+  };
+
   useEffect(() => {
     if (success === true) {
       history.replace('/result', matchData);
@@ -67,8 +72,7 @@ const Ingame = () => {
         topic={topic}
         indexNow={indexNow}
         hook={dummyOnChange}
-        listPush={listPush}
-        submitPush={submitPush}
+        enterEvent={enterEvent}
       />
       <div className="ingame--botton">
         {indexNow === topic.length - 1 ? (

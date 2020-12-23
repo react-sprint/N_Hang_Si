@@ -4,11 +4,10 @@ import '@/assets/scss/commons/Textarea.scss';
 const Textarea = ({
   placeholder,
   hook,
-  listPush,
   wordNow,
   indexNow,
   topic,
-  submitPush,
+  enterEvent,
 }) => {
   const [value, setValue] = useState('');
   const thisSliderRef = useRef();
@@ -16,18 +15,9 @@ const Textarea = ({
     setValue(e.target.value);
     hook(e.target.value);
   };
-  const onKeyUp = e => {
+  const onKeyPress = e => {
     if (e.key === 'Enter') {
-      if (topic.length - 1 === indexNow) {
-        submitPush();
-      } else {
-        listPush();
-      }
-    }
-  };
-  const onKeyDown = e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
+      enterEvent();
     }
   };
 
@@ -42,8 +32,7 @@ const Textarea = ({
       value={value}
       placeholder={placeholder}
       onChange={onChange}
-      onKeyUp={onKeyUp}
-      onKeyDown={onKeyDown}
+      onKeyPress={onKeyPress}
       tabIndex={-1}
       ref={thisSliderRef}
     />
@@ -52,12 +41,11 @@ const Textarea = ({
 
 Textarea.defaultProps = {
   placeholder: '입력해주세요.',
-  hook: () => {},
-  listPush: () => {},
   wordNow: '순',
   indexNow: 0,
   topic: '순두부',
-  submitPush: () => {},
+  hook: () => {},
+  enterEvent: () => {},
 };
 
 export default Textarea;

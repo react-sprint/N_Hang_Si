@@ -4,14 +4,7 @@ import '@/assets/scss/layouts/ingame/SliderBox.scss';
 import Textarea from '@/components/commons/Textarea';
 import TopicCard from '@/components/elements/ingame/TopicCard';
 
-const SliderBox = ({
-  topic,
-  wordNow,
-  indexNow,
-  hook,
-  listPush,
-  submitPush,
-}) => {
+const SliderBox = ({ topic, wordNow, indexNow, hook, enterEvent }) => {
   const style = { width: `${100 / topic.length}%` };
   return (
     <div className="slider__box" style={style}>
@@ -20,11 +13,10 @@ const SliderBox = ({
         <Textarea
           placeholder="클릭하여 입력해주세요"
           hook={hook}
-          listPush={listPush}
           wordNow={wordNow}
           indexNow={indexNow}
           topic={topic}
-          submitPush={submitPush}
+          enterEvent={enterEvent}
         />
       </div>
     </div>
@@ -36,8 +28,7 @@ SliderBox.defaultProps = {
   wordNow: '순',
   indexNow: 0,
   hook: () => {},
-  listPush: () => {},
-  submitPush: () => {},
+  enterEvent: () => {},
 };
 
 export default SliderBox;
