@@ -1,59 +1,31 @@
+<img src="https://drive.google.com/uc?id=1zd9LLlvdRQk91d0CyPPTya8oFyL8GUQz" width="10%">
+
 # N 행시
 
-## version
+![Node](https://img.shields.io/badge/node-12.19.0-%23026E00)
+![React](https://img.shields.io/badge/cra-4.0.1-%2361dafb)
+![Storybook](https://img.shields.io/badge/storybook-6.1.9-%23FF4785)
+![Scss](https://img.shields.io/badge/scss-4.14.1-%23BF4080)
+![Redux](https://img.shields.io/badge/redux-4.0.5-%23744CBC)
+![AirbnbGuide](https://img.shields.io/badge/airbnbguide-18.2.1-%23FF385c)
 
-- node/12.19.0
-- create-react-app/3.4.1
+간단하게 N 행시를 짓는 게임을 할 수 있는 프로젝트입니다.
+
+## [실행](http://n-hangsi.com/)
+
+**Github Actions**을 이용해서 **AWS S3**에 Static으로 자동 배포
+
+## 개발자👨‍💻👩‍💻👨‍💻
+
+### 👨‍💻 [곽민상](https://github.com/qkaxhfms)
+
+### 👩‍💻 [전지원](https://github.com/dddieon)
+
+### 👨‍💻 [정내혁](https://github.com/jeongnaehyeok)
 
 ## 사용법
 
-```bash
-npm install
-# 서버 실행
-npm run start
-# or
-yarn run start
-
-# Storybook 실행
-npm run storybook
-# or
-yarn storybook
-```
-
-### visual studio 설정
-
-#### 자동 Formatting 설정
-
-`⌘(command) + ,(comma)`를 눌러서 설정을 열고
-![](https://drive.google.com/uc?id=1maTB_bG86oe59UoIbeRW0vaavDVfZV4t)
-해당 아이콘을 눌러서 json파일로 `settings`파일 하단에 다음 내용을 추가한다
-
-```json
-  "editor.formatOnSave": true,
-  "[javascript]": {
-    "editor.formatOnSave": false
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "eslint.alwaysShowStatus": true,
-  "prettier.disableLanguages": ["js"],
-  "files.autoSave": "onFocusChange",
-```
-
-## Issue
-
-## 개발 환경에 따른 babel-loader 이슈(20.11.29)
-
-개발 환경을 바꿨더니 `babel-loader` 버전에 대한 오류 발생, 버전 `8.1.0`을 설치해줌
-
-```bash
-npm install babel-loader@8.1.0
-```
-
-### .env에서 OS 때문에 생기는 이슈(20.11.24)
-
-각 OS에 맞는 .env 설정이 필요함
+### .env 설정
 
 ```.env
 // .env
@@ -69,14 +41,19 @@ REACT_APP_API_HOST=방구석 호랑이 문의
 REACT_APP_API_KEY=방구석 호랑이 문의
 ```
 
-### node-sass 버전때문에 생기는 이슈(20.11.18)
-
-node-sass버전 확인 필요
-`5.0.0`버전에서는 이슈있음. `4.14.1`버전으로 변경해줬음
+### 실행 설정
 
 ```bash
-npm uninstall node-sass
-npm install node-sass@4.14.1
+npm install
+# 서버 실행
+npm run start
+# or
+yarn run start
+
+# Storybook 실행
+npm run storybook
+# or
+yarn storybook
 ```
 
 ## 파일 구조
@@ -84,11 +61,20 @@ npm install node-sass@4.14.1
 ```bash
 N_Hang_Si
 ├── .env
+├── .eslintrc.js
+├── .gitignore
+├── .prettierrc.js
 ├── README.md
 ├── craco.config.js
 ├── jsconfig.json
 ├── package-lock.json
 ├── package.json
+├── .github
+│   └── workflows
+│       └── main.yml
+├── .storybook
+│   ├── main.js
+│   └── preview.js
 ├── public
 │   ├── favicon.ico
 │   ├── index.html
@@ -117,17 +103,14 @@ N_Hang_Si
 │   ├── modules
 │   │   └── index.js
 │   ├── stories
-│   │   └── App.stories.js
 │   └── utils
-│       ├── api
-│       └── hooks
 └── yarn.lock
 ```
 
-## 개발자🧑‍💻👩‍💻👨‍💻
+## 백엔드
 
-### 🧑‍💻 [곽민상](https://github.com/qkaxhfms)
+### [N-Hang-Si Backend](https://github.com/react-sprint/N_Hang_Si_API)
 
-### 👩‍💻 [전지원](https://github.com/dddieon)
+## 문의사항
 
-### 👨‍💻 [정내혁](https://github.com/jeongnaehyeok)
+cnh0301@gmail.com
