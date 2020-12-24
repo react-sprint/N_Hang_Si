@@ -18,6 +18,7 @@ const Textarea = ({
   const onKeyPress = e => {
     if (e.key === 'Enter') {
       enterEvent();
+      e.preventDefault();
     }
   };
 
