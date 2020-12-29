@@ -9,7 +9,7 @@
 ![Redux](https://img.shields.io/badge/redux-4.0.5-%23744CBC)
 ![AirbnbGuide](https://img.shields.io/badge/airbnbguide-18.2.1-%23FF385c)
 
-간단하게 N 행시를 짓는 게임을 할 수 있는 프로젝트입니다.
+타임어택으로 N행시 게임을 진행하는 프로젝트입니다.
 
 ## [실행](http://n-hangsi.com/)
 
