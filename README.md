@@ -11,7 +11,7 @@
 
 타임어택으로 N행시 게임을 진행하는 프로젝트입니다.
 
-## [실행](http://n-hangsi.com/)
+## [실행](https://www.nhangsi.com/)
 
 **Github Actions**을 이용해서 **AWS S3**에 Static으로 자동 배포
 
@@ -47,13 +47,9 @@ REACT_APP_API_KEY=방구석 호랑이 문의
 npm install
 # 서버 실행
 npm run start
-# or
-yarn run start
 
 # Storybook 실행
 npm run storybook
-# or
-yarn storybook
 ```
 
 ## 파일 구조
