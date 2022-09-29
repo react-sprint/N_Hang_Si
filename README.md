@@ -13,7 +13,7 @@
 
 ## [실행](https://www.nhangsi.com/)
 
-**Github Actions**을 이용해서 **AWS S3**에 Static으로 자동 배포
+**Github Actions**을 이용해서 Vercel로 자동 배포
 
 ## 개발자👨‍💻👩‍💻👨‍💻
 
